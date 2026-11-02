@@ -1,0 +1,28 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+profiles.yml
+.dbt/
+.databrickscfg
+*.token
+
+# Power BI local working files
+powerbi/*.pbix
+powerbi/*.pbids
+
+# Editor and operating-system files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

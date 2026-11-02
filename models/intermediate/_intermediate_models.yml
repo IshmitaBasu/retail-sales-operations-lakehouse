@@ -1,0 +1,187 @@
+version: 2
+
+models:
+  - name: view_order_line_enriched
+    description: Enriched sales view at one row per order line, joining order and product context and calculating auditable monetary components for the incremental fact.
+    columns:
+      - name: order_line_id
+        description: Order-line grain key.
+        data_tests: [not_null, unique]
+      - name: order_id
+        description: Parent order identifier.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_orders')
+                field: order_id
+      - name: customer_id
+        description: Customer associated with the parent order.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_customers')
+                field: customer_id
+      - name: product_id
+        description: Product represented by the order line.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_products')
+                field: product_id
+      - name: order_created_at
+        description: Parent order creation timestamp.
+        data_tests: [not_null]
+      - name: order_date
+        description: Calendar date derived from the order creation timestamp.
+        data_tests: [not_null]
+      - name: order_type
+        description: Physical or digital order classification.
+        data_tests: [not_null]
+      - name: sales_channel
+        description: Channel through which the order was placed.
+        data_tests: [not_null]
+      - name: payment_status
+        description: Payment lifecycle status inherited from the order.
+        data_tests: [not_null]
+      - name: order_status
+        description: Order lifecycle status used by recognized-sales logic.
+        data_tests: [not_null]
+      - name: currency_code
+        description: ISO transaction currency code.
+        data_tests: [not_null]
+      - name: product_name
+        description: Product display name.
+        data_tests: [not_null]
+      - name: category
+        description: Product reporting category.
+        data_tests: [not_null]
+      - name: product_type
+        description: Physical or digital product classification.
+        data_tests: [not_null]
+      - name: quantity
+        description: Purchased unit count.
+        data_tests: [not_null]
+      - name: unit_price_eur
+        description: Actual unit price before discount.
+        data_tests: [not_null]
+      - name: discount_amount_eur
+        description: Total line discount.
+        data_tests: [not_null]
+      - name: unit_cost_eur
+        description: Product unit cost used for margin calculation.
+        data_tests: [not_null]
+      - name: gross_sales_amount_eur
+        description: Quantity multiplied by actual unit price.
+        data_tests: [not_null]
+      - name: net_sales_amount_eur
+        description: Gross sales less the line discount.
+        data_tests: [not_null]
+      - name: cost_amount_eur
+        description: Quantity multiplied by product unit cost.
+        data_tests: [not_null]
+      - name: gross_margin_amount_eur
+        description: Net sales less product cost.
+        data_tests: [not_null]
+      - name: recognized_net_sales_amount_eur
+        description: Net sales for non-cancelled orders and zero for cancelled orders.
+        data_tests: [not_null]
+      - name: order_updated_at
+        description: Latest source update timestamp for the parent order.
+        data_tests: [not_null]
+      - name: order_line_updated_at
+        description: Latest source update timestamp for the order line.
+        data_tests: [not_null]
+      - name: incremental_watermark
+        description: Greatest of the order and order-line update timestamps, used by the Stage 5 merge.
+        data_tests: [not_null]
+
+  - name: view_fulfilment_enriched
+    description: Enriched physical-operations view at one row per fulfilment/order, with durations and delivery-performance flags.
+    columns:
+      - name: fulfilment_id
+        description: Fulfilment grain key.
+        data_tests: [not_null, unique]
+      - name: order_id
+        description: Physical order represented by this fulfilment.
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('view_orders')
+                field: order_id
+      - name: customer_id
+        description: Customer associated with the physical order.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_customers')
+                field: customer_id
+      - name: order_created_at
+        description: Parent order creation timestamp.
+        data_tests: [not_null]
+      - name: order_status
+        description: Parent order lifecycle status.
+        data_tests: [not_null]
+      - name: order_type
+        description: Order classification; fulfilment records are expected to be physical.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [physical]
+      - name: fulfilment_centre_id
+        description: Fulfilment-centre identifier.
+        data_tests: [not_null]
+      - name: fulfilment_centre_name
+        description: Fulfilment-centre display name.
+        data_tests: [not_null]
+      - name: fulfilment_centre_region
+        description: Region in which the fulfilment centre operates.
+        data_tests: [not_null]
+      - name: carrier_name
+        description: Delivery-carrier name.
+        data_tests: [not_null]
+      - name: fulfilment_status
+        description: Operational fulfilment lifecycle status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [processing, picked, shipped, delivered, cancelled]
+      - name: picked_at
+        description: Pick event timestamp, where available.
+      - name: packed_at
+        description: Pack event timestamp, where available.
+      - name: shipped_at
+        description: Ship event timestamp, where available.
+      - name: promised_delivery_date
+        description: Customer-facing promised delivery date.
+        data_tests: [not_null]
+      - name: delivered_at
+        description: Delivery completion timestamp, where available.
+      - name: fulfilment_hours
+        description: Decimal hours from order creation to shipment; null before shipment.
+      - name: delivery_hours
+        description: Decimal hours from shipment to delivery; null before delivery.
+      - name: is_on_time_delivery
+        description: True when a delivered order arrived by its promise date; null for non-delivered records.
+      - name: is_delivered
+        description: Boolean delivered-status indicator.
+        data_tests: [not_null]
+      - name: is_cancelled
+        description: Boolean cancelled-status indicator.
+        data_tests: [not_null]
+      - name: fulfilment_updated_at
+        description: Latest source update timestamp for the fulfilment.
+        data_tests: [not_null]
+      - name: order_updated_at
+        description: Latest source update timestamp for the parent order.
+        data_tests: [not_null]
+      - name: record_updated_at
+        description: Greatest of the fulfilment and order update timestamps.
+        data_tests: [not_null]

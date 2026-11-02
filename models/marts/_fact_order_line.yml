@@ -1,0 +1,113 @@
+version: 2
+
+models:
+  - name: fact_order_line
+    description: Incremental Delta fact at one row per order line. Uses order_line_id as its merge key, the greatest order/line update timestamp as its high watermark, and an unseen-key check for late-arriving inserts.
+    config:
+      contract:
+        enforced: false
+    columns:
+      - name: order_line_id
+        description: Stable order-line grain key used by the Delta merge.
+        data_tests: [not_null, unique]
+      - name: order_id
+        description: Degenerate parent-order identifier.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_orders')
+                field: order_id
+      - name: customer_id
+        description: Customer foreign key for the future customer dimension.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_customers')
+                field: customer_id
+      - name: product_id
+        description: Product foreign key for the future product dimension.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_products')
+                field: product_id
+      - name: order_created_at
+        description: Timestamp at which the parent order was created.
+        data_tests: [not_null]
+      - name: order_date
+        description: Calendar date derived from order_created_at.
+        data_tests: [not_null]
+      - name: order_type
+        description: Physical or digital order classification.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [physical, digital]
+      - name: sales_channel
+        description: Channel through which the order was placed.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [web, mobile, marketplace, store]
+      - name: payment_status
+        description: Current payment lifecycle status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [paid, pending, refunded, failed]
+      - name: order_status
+        description: Current order lifecycle status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [placed, processing, shipped, delivered, cancelled]
+      - name: currency_code
+        description: ISO transaction currency code, fixed to EUR in this project.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [EUR]
+      - name: quantity
+        description: Purchased unit count.
+        data_tests: [not_null]
+      - name: unit_price_eur
+        description: Actual unit price before discount.
+        data_tests: [not_null]
+      - name: discount_amount_eur
+        description: Total discount applied to the line.
+        data_tests: [not_null]
+      - name: unit_cost_eur
+        description: Product unit cost captured for margin calculation.
+        data_tests: [not_null]
+      - name: gross_sales_amount_eur
+        description: Quantity multiplied by actual unit price.
+        data_tests: [not_null]
+      - name: net_sales_amount_eur
+        description: Gross sales less line discount.
+        data_tests: [not_null]
+      - name: cost_amount_eur
+        description: Quantity multiplied by unit cost.
+        data_tests: [not_null]
+      - name: gross_margin_amount_eur
+        description: Net sales less cost.
+        data_tests: [not_null]
+      - name: recognized_net_sales_amount_eur
+        description: Net sales for non-cancelled orders and zero for cancelled orders.
+        data_tests: [not_null]
+      - name: order_updated_at
+        description: Latest source update timestamp for the parent order.
+        data_tests: [not_null]
+      - name: order_line_updated_at
+        description: Latest source update timestamp for the line.
+        data_tests: [not_null]
+      - name: incremental_watermark
+        description: Greatest of order_updated_at and order_line_updated_at; filters incremental source rows.
+        data_tests: [not_null]

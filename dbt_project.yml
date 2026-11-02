@@ -1,0 +1,88 @@
+name: retail_sales_operations_lakehouse
+version: 1.0.0
+config-version: 2
+
+profile: retail_sales_operations_lakehouse
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["data/generated"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  retail_sales_operations_lakehouse:
+    staging:
+      +materialized: view
+      +schema: staging
+      +tags: ["staging"]
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+      +tags: ["intermediate"]
+    marts:
+      +materialized: table
+      +schema: marts
+      +tags: ["marts", "certified"]
+
+seeds:
+  retail_sales_operations_lakehouse:
+    +schema: raw
+    customers:
+      +column_types:
+        customer_id: string
+        signup_date: date
+        customer_segment: string
+        region: string
+        country_code: string
+        updated_at: timestamp
+    products:
+      +column_types:
+        product_id: string
+        product_name: string
+        category: string
+        product_type: string
+        unit_cost_eur: decimal(18,2)
+        list_price_eur: decimal(18,2)
+        is_active: boolean
+        updated_at: timestamp
+    orders:
+      +column_types:
+        order_id: string
+        customer_id: string
+        order_created_at: timestamp
+        order_type: string
+        sales_channel: string
+        payment_status: string
+        order_status: string
+        currency_code: string
+        updated_at: timestamp
+    order_lines:
+      +column_types:
+        order_line_id: string
+        order_id: string
+        product_id: string
+        quantity: integer
+        unit_price_eur: decimal(18,2)
+        discount_amount_eur: decimal(18,2)
+        updated_at: timestamp
+    fulfilments:
+      +column_types:
+        fulfilment_id: string
+        order_id: string
+        fulfilment_centre_id: string
+        fulfilment_centre_name: string
+        fulfilment_centre_region: string
+        carrier_name: string
+        fulfilment_status: string
+        picked_at: timestamp
+        packed_at: timestamp
+        shipped_at: timestamp
+        promised_delivery_date: date
+        delivered_at: timestamp
+        updated_at: timestamp

@@ -1,0 +1,11 @@
+retail_sales_operations_lakehouse:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      host: YOUR_DATABRICKS_SERVER_HOSTNAME
+      http_path: YOUR_SQL_WAREHOUSE_HTTP_PATH
+      auth_type: oauth
+      catalog: workspace
+      schema: retail
+      threads: 2

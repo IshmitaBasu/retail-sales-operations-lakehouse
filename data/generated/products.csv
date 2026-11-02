@@ -1,0 +1,501 @@
+product_id,product_name,category,product_type,unit_cost_eur,list_price_eur,is_active,updated_at
+PRD-0001,Grocery Product 0001,Grocery,physical,138.37,323.79,true,2023-01-02 00:00:00
+PRD-0002,Toys Product 0002,Toys,physical,109.50,162.06,true,2023-01-03 00:00:00
+PRD-0003,Clothing Product 0003,Clothing,physical,38.65,64.55,true,2023-01-04 00:00:00
+PRD-0004,Pet Supplies Product 0004,Pet Supplies,physical,117.98,218.26,true,2023-01-05 00:00:00
+PRD-0005,Electronics Product 0005,Electronics,physical,155.57,343.81,true,2023-01-06 00:00:00
+PRD-0006,Health & Beauty Product 0006,Health & Beauty,physical,67.49,104.61,true,2023-01-07 00:00:00
+PRD-0007,Pet Supplies Product 0007,Pet Supplies,physical,119.15,294.30,true,2023-01-08 00:00:00
+PRD-0008,Toys Product 0008,Toys,physical,16.21,28.85,true,2023-01-09 00:00:00
+PRD-0009,Grocery Product 0009,Grocery,physical,58.21,142.03,true,2023-01-10 00:00:00
+PRD-0010,Electronics Product 0010,Electronics,digital,153.39,319.05,true,2023-01-11 00:00:00
+PRD-0011,Office Product 0011,Office,physical,73.93,178.17,true,2023-01-12 00:00:00
+PRD-0012,Home Product 0012,Home,physical,49.71,111.85,true,2023-01-13 00:00:00
+PRD-0013,Grocery Product 0013,Grocery,physical,22.32,41.96,true,2023-01-14 00:00:00
+PRD-0014,Pet Supplies Product 0014,Pet Supplies,physical,66.37,157.96,true,2023-01-15 00:00:00
+PRD-0015,Sports Product 0015,Sports,physical,173.22,400.14,true,2023-01-16 00:00:00
+PRD-0016,Sports Product 0016,Sports,physical,60.12,110.62,true,2023-01-17 00:00:00
+PRD-0017,Electronics Product 0017,Electronics,physical,66.26,166.31,true,2023-01-18 00:00:00
+PRD-0018,Grocery Product 0018,Grocery,physical,88.99,185.99,true,2023-01-19 00:00:00
+PRD-0019,Clothing Product 0019,Clothing,physical,73.74,137.89,true,2023-01-20 00:00:00
+PRD-0020,Electronics Product 0020,Electronics,digital,150.45,376.13,true,2023-01-21 00:00:00
+PRD-0021,Electronics Product 0021,Electronics,physical,63.82,122.53,true,2023-01-22 00:00:00
+PRD-0022,Health & Beauty Product 0022,Health & Beauty,physical,64.59,111.74,true,2023-01-23 00:00:00
+PRD-0023,Clothing Product 0023,Clothing,physical,65.61,96.45,true,2023-01-24 00:00:00
+PRD-0024,Office Product 0024,Office,physical,173.32,294.64,true,2023-01-25 00:00:00
+PRD-0025,Pet Supplies Product 0025,Pet Supplies,physical,84.85,201.09,true,2023-01-26 00:00:00
+PRD-0026,Electronics Product 0026,Electronics,physical,49.08,88.83,true,2023-01-27 00:00:00
+PRD-0027,Office Product 0027,Office,physical,3.33,7.79,true,2023-01-28 00:00:00
+PRD-0028,Sports Product 0028,Sports,physical,16.62,38.06,true,2023-01-29 00:00:00
+PRD-0029,Electronics Product 0029,Electronics,physical,10.15,25.48,true,2023-01-30 00:00:00
+PRD-0030,Electronics Product 0030,Electronics,digital,115.04,281.85,true,2023-01-31 00:00:00
+PRD-0031,Health & Beauty Product 0031,Health & Beauty,physical,69.65,181.09,true,2023-02-01 00:00:00
+PRD-0032,Books Product 0032,Books,physical,84.28,199.74,true,2023-02-02 00:00:00
+PRD-0033,Books Product 0033,Books,physical,16.46,27.98,true,2023-02-03 00:00:00
+PRD-0034,Sports Product 0034,Sports,physical,23.81,46.67,true,2023-02-04 00:00:00
+PRD-0035,Sports Product 0035,Sports,physical,128.93,332.64,true,2023-02-05 00:00:00
+PRD-0036,Office Product 0036,Office,physical,29.52,74.69,true,2023-02-06 00:00:00
+PRD-0037,Health & Beauty Product 0037,Health & Beauty,physical,23.88,38.92,true,2023-02-07 00:00:00
+PRD-0038,Books Product 0038,Books,physical,120.00,174.00,true,2023-02-08 00:00:00
+PRD-0039,Sports Product 0039,Sports,physical,15.09,32.75,true,2023-02-09 00:00:00
+PRD-0040,Books Product 0040,Books,digital,49.28,71.46,true,2023-02-10 00:00:00
+PRD-0041,Electronics Product 0041,Electronics,physical,64.17,134.12,true,2023-02-11 00:00:00
+PRD-0042,Office Product 0042,Office,physical,16.67,34.17,true,2023-02-12 00:00:00
+PRD-0043,Books Product 0043,Books,physical,175.80,265.46,true,2023-02-13 00:00:00
+PRD-0044,Sports Product 0044,Sports,physical,83.81,126.55,true,2023-02-14 00:00:00
+PRD-0045,Books Product 0045,Books,physical,20.21,48.30,true,2023-02-15 00:00:00
+PRD-0046,Clothing Product 0046,Clothing,physical,151.26,346.39,true,2023-02-16 00:00:00
+PRD-0047,Pet Supplies Product 0047,Pet Supplies,physical,35.78,84.80,false,2023-02-17 00:00:00
+PRD-0048,Electronics Product 0048,Electronics,physical,91.34,170.81,true,2023-02-18 00:00:00
+PRD-0049,Toys Product 0049,Toys,physical,172.22,337.55,true,2023-02-19 00:00:00
+PRD-0050,Electronics Product 0050,Electronics,digital,69.96,177.70,true,2023-02-20 00:00:00
+PRD-0051,Grocery Product 0051,Grocery,physical,66.47,99.71,true,2023-02-21 00:00:00
+PRD-0052,Electronics Product 0052,Electronics,physical,135.41,310.09,true,2023-02-22 00:00:00
+PRD-0053,Health & Beauty Product 0053,Health & Beauty,physical,72.76,128.79,true,2023-02-23 00:00:00
+PRD-0054,Health & Beauty Product 0054,Health & Beauty,physical,59.47,132.02,true,2023-02-24 00:00:00
+PRD-0055,Clothing Product 0055,Clothing,physical,136.24,328.34,true,2023-02-25 00:00:00
+PRD-0056,Home Product 0056,Home,physical,35.70,89.25,true,2023-02-26 00:00:00
+PRD-0057,Grocery Product 0057,Grocery,physical,107.35,252.27,true,2023-02-27 00:00:00
+PRD-0058,Electronics Product 0058,Electronics,physical,165.11,295.55,true,2023-02-28 00:00:00
+PRD-0059,Books Product 0059,Books,physical,135.87,263.59,true,2023-03-01 00:00:00
+PRD-0060,Electronics Product 0060,Electronics,digital,48.69,107.12,true,2023-03-02 00:00:00
+PRD-0061,Office Product 0061,Office,physical,179.82,401.00,true,2023-03-03 00:00:00
+PRD-0062,Home Product 0062,Home,physical,74.71,183.04,true,2023-03-04 00:00:00
+PRD-0063,Electronics Product 0063,Electronics,physical,53.04,98.12,true,2023-03-05 00:00:00
+PRD-0064,Home Product 0064,Home,physical,11.93,28.15,true,2023-03-06 00:00:00
+PRD-0065,Toys Product 0065,Toys,physical,60.96,123.75,true,2023-03-07 00:00:00
+PRD-0066,Home Product 0066,Home,physical,88.65,151.59,true,2023-03-08 00:00:00
+PRD-0067,Pet Supplies Product 0067,Pet Supplies,physical,9.31,16.29,true,2023-03-09 00:00:00
+PRD-0068,Office Product 0068,Office,physical,46.68,77.49,true,2023-03-10 00:00:00
+PRD-0069,Pet Supplies Product 0069,Pet Supplies,physical,90.14,152.34,true,2023-03-11 00:00:00
+PRD-0070,Books Product 0070,Books,digital,21.61,36.52,true,2023-03-12 00:00:00
+PRD-0071,Health & Beauty Product 0071,Health & Beauty,physical,17.82,25.66,true,2023-03-13 00:00:00
+PRD-0072,Health & Beauty Product 0072,Health & Beauty,physical,138.41,287.89,true,2023-03-14 00:00:00
+PRD-0073,Health & Beauty Product 0073,Health & Beauty,physical,179.51,402.10,true,2023-03-15 00:00:00
+PRD-0074,Clothing Product 0074,Clothing,physical,54.55,133.65,true,2023-03-16 00:00:00
+PRD-0075,Books Product 0075,Books,physical,33.19,54.10,true,2023-03-17 00:00:00
+PRD-0076,Electronics Product 0076,Electronics,physical,138.62,313.28,true,2023-03-18 00:00:00
+PRD-0077,Clothing Product 0077,Clothing,physical,105.79,163.97,true,2023-03-19 00:00:00
+PRD-0078,Pet Supplies Product 0078,Pet Supplies,physical,132.35,334.85,true,2023-03-20 00:00:00
+PRD-0079,Clothing Product 0079,Clothing,physical,172.18,396.01,true,2023-03-21 00:00:00
+PRD-0080,Books Product 0080,Books,digital,96.63,171.04,true,2023-03-22 00:00:00
+PRD-0081,Sports Product 0081,Sports,physical,92.23,143.88,true,2023-03-23 00:00:00
+PRD-0082,Sports Product 0082,Sports,physical,161.76,339.70,true,2023-03-24 00:00:00
+PRD-0083,Health & Beauty Product 0083,Health & Beauty,physical,65.65,140.49,true,2023-03-25 00:00:00
+PRD-0084,Electronics Product 0084,Electronics,physical,168.70,276.67,true,2023-03-26 00:00:00
+PRD-0085,Office Product 0085,Office,physical,28.58,60.59,true,2023-03-27 00:00:00
+PRD-0086,Home Product 0086,Home,physical,130.98,310.42,true,2023-03-28 00:00:00
+PRD-0087,Office Product 0087,Office,physical,36.14,70.83,true,2023-03-29 00:00:00
+PRD-0088,Books Product 0088,Books,physical,15.94,33.63,true,2023-03-30 00:00:00
+PRD-0089,Electronics Product 0089,Electronics,physical,130.76,332.13,true,2023-03-31 00:00:00
+PRD-0090,Books Product 0090,Books,digital,115.89,178.47,true,2023-04-01 00:00:00
+PRD-0091,Grocery Product 0091,Grocery,physical,168.87,401.91,true,2023-04-02 00:00:00
+PRD-0092,Electronics Product 0092,Electronics,physical,21.10,44.73,true,2023-04-03 00:00:00
+PRD-0093,Electronics Product 0093,Electronics,physical,41.99,81.04,true,2023-04-04 00:00:00
+PRD-0094,Office Product 0094,Office,physical,12.30,19.93,false,2023-04-05 00:00:00
+PRD-0095,Health & Beauty Product 0095,Health & Beauty,physical,123.87,289.86,true,2023-04-06 00:00:00
+PRD-0096,Toys Product 0096,Toys,physical,114.41,164.75,true,2023-04-07 00:00:00
+PRD-0097,Home Product 0097,Home,physical,4.53,8.06,true,2023-04-08 00:00:00
+PRD-0098,Health & Beauty Product 0098,Health & Beauty,physical,103.45,161.38,true,2023-04-09 00:00:00
+PRD-0099,Grocery Product 0099,Grocery,physical,176.10,297.61,true,2023-04-10 00:00:00
+PRD-0100,Books Product 0100,Books,digital,125.09,265.19,true,2023-04-11 00:00:00
+PRD-0101,Health & Beauty Product 0101,Health & Beauty,physical,77.44,137.07,true,2023-04-12 00:00:00
+PRD-0102,Health & Beauty Product 0102,Health & Beauty,physical,87.21,192.73,true,2023-04-13 00:00:00
+PRD-0103,Health & Beauty Product 0103,Health & Beauty,physical,104.37,171.17,true,2023-04-14 00:00:00
+PRD-0104,Sports Product 0104,Sports,physical,60.02,121.24,true,2023-04-15 00:00:00
+PRD-0105,Health & Beauty Product 0105,Health & Beauty,physical,72.56,103.76,true,2023-04-16 00:00:00
+PRD-0106,Grocery Product 0106,Grocery,physical,122.18,171.05,true,2023-04-17 00:00:00
+PRD-0107,Clothing Product 0107,Clothing,physical,47.25,121.43,true,2023-04-18 00:00:00
+PRD-0108,Sports Product 0108,Sports,physical,35.88,87.19,true,2023-04-19 00:00:00
+PRD-0109,Office Product 0109,Office,physical,134.77,243.93,true,2023-04-20 00:00:00
+PRD-0110,Books Product 0110,Books,digital,162.69,354.66,true,2023-04-21 00:00:00
+PRD-0111,Pet Supplies Product 0111,Pet Supplies,physical,170.76,350.06,true,2023-04-22 00:00:00
+PRD-0112,Clothing Product 0112,Clothing,physical,144.75,321.35,true,2023-04-23 00:00:00
+PRD-0113,Books Product 0113,Books,physical,156.96,362.58,true,2023-04-24 00:00:00
+PRD-0114,Health & Beauty Product 0114,Health & Beauty,physical,116.01,250.58,true,2023-04-25 00:00:00
+PRD-0115,Grocery Product 0115,Grocery,physical,143.00,238.81,true,2023-04-26 00:00:00
+PRD-0116,Pet Supplies Product 0116,Pet Supplies,physical,172.62,269.29,true,2023-04-27 00:00:00
+PRD-0117,Electronics Product 0117,Electronics,physical,152.75,395.62,true,2023-04-28 00:00:00
+PRD-0118,Grocery Product 0118,Grocery,physical,142.07,204.58,true,2023-04-29 00:00:00
+PRD-0119,Pet Supplies Product 0119,Pet Supplies,physical,28.63,73.87,true,2023-04-30 00:00:00
+PRD-0120,Electronics Product 0120,Electronics,digital,165.62,334.55,true,2023-05-01 00:00:00
+PRD-0121,Toys Product 0121,Toys,physical,43.55,75.78,true,2023-05-02 00:00:00
+PRD-0122,Sports Product 0122,Sports,physical,163.93,347.53,true,2023-05-03 00:00:00
+PRD-0123,Grocery Product 0123,Grocery,physical,126.77,299.18,true,2023-05-04 00:00:00
+PRD-0124,Sports Product 0124,Sports,physical,152.70,262.64,true,2023-05-05 00:00:00
+PRD-0125,Health & Beauty Product 0125,Health & Beauty,physical,91.54,134.56,true,2023-05-06 00:00:00
+PRD-0126,Pet Supplies Product 0126,Pet Supplies,physical,45.76,82.37,true,2023-05-07 00:00:00
+PRD-0127,Sports Product 0127,Sports,physical,47.56,74.19,true,2023-05-08 00:00:00
+PRD-0128,Electronics Product 0128,Electronics,physical,14.11,29.07,true,2023-05-09 00:00:00
+PRD-0129,Home Product 0129,Home,physical,68.16,143.82,true,2023-05-10 00:00:00
+PRD-0130,Electronics Product 0130,Electronics,digital,116.30,219.81,true,2023-05-11 00:00:00
+PRD-0131,Clothing Product 0131,Clothing,physical,74.73,169.64,true,2023-05-12 00:00:00
+PRD-0132,Office Product 0132,Office,physical,77.23,130.52,true,2023-05-13 00:00:00
+PRD-0133,Pet Supplies Product 0133,Pet Supplies,physical,10.80,20.09,true,2023-05-14 00:00:00
+PRD-0134,Office Product 0134,Office,physical,109.87,201.06,true,2023-05-15 00:00:00
+PRD-0135,Clothing Product 0135,Clothing,physical,61.44,146.23,true,2023-05-16 00:00:00
+PRD-0136,Books Product 0136,Books,physical,73.53,181.62,true,2023-05-17 00:00:00
+PRD-0137,Health & Beauty Product 0137,Health & Beauty,physical,176.78,376.54,true,2023-05-18 00:00:00
+PRD-0138,Sports Product 0138,Sports,physical,83.52,168.71,true,2023-05-19 00:00:00
+PRD-0139,Office Product 0139,Office,physical,130.85,300.96,true,2023-05-20 00:00:00
+PRD-0140,Electronics Product 0140,Electronics,digital,76.32,131.27,true,2023-05-21 00:00:00
+PRD-0141,Home Product 0141,Home,physical,157.73,296.53,false,2023-05-22 00:00:00
+PRD-0142,Home Product 0142,Home,physical,7.44,19.05,true,2023-05-23 00:00:00
+PRD-0143,Office Product 0143,Office,physical,157.44,376.28,true,2023-05-24 00:00:00
+PRD-0144,Clothing Product 0144,Clothing,physical,66.62,141.90,true,2023-05-25 00:00:00
+PRD-0145,Sports Product 0145,Sports,physical,141.02,308.83,true,2023-05-26 00:00:00
+PRD-0146,Pet Supplies Product 0146,Pet Supplies,physical,158.08,373.07,true,2023-05-27 00:00:00
+PRD-0147,Home Product 0147,Home,physical,138.25,291.71,true,2023-05-28 00:00:00
+PRD-0148,Toys Product 0148,Toys,physical,179.39,261.91,true,2023-05-29 00:00:00
+PRD-0149,Electronics Product 0149,Electronics,physical,157.62,345.19,true,2023-05-30 00:00:00
+PRD-0150,Electronics Product 0150,Electronics,digital,159.63,362.36,true,2023-05-31 00:00:00
+PRD-0151,Books Product 0151,Books,physical,42.44,76.39,true,2023-06-01 00:00:00
+PRD-0152,Health & Beauty Product 0152,Health & Beauty,physical,54.29,79.26,true,2023-06-02 00:00:00
+PRD-0153,Office Product 0153,Office,physical,91.97,185.78,true,2023-06-03 00:00:00
+PRD-0154,Toys Product 0154,Toys,physical,163.04,283.69,true,2023-06-04 00:00:00
+PRD-0155,Toys Product 0155,Toys,physical,156.29,311.02,true,2023-06-05 00:00:00
+PRD-0156,Office Product 0156,Office,physical,83.73,180.02,true,2023-06-06 00:00:00
+PRD-0157,Office Product 0157,Office,physical,3.69,8.97,true,2023-06-07 00:00:00
+PRD-0158,Toys Product 0158,Toys,physical,168.85,386.67,true,2023-06-08 00:00:00
+PRD-0159,Pet Supplies Product 0159,Pet Supplies,physical,143.41,368.56,true,2023-06-09 00:00:00
+PRD-0160,Electronics Product 0160,Electronics,digital,100.95,251.37,true,2023-06-10 00:00:00
+PRD-0161,Electronics Product 0161,Electronics,physical,18.80,33.65,true,2023-06-11 00:00:00
+PRD-0162,Books Product 0162,Books,physical,63.08,152.65,true,2023-06-12 00:00:00
+PRD-0163,Sports Product 0163,Sports,physical,85.57,137.77,true,2023-06-13 00:00:00
+PRD-0164,Sports Product 0164,Sports,physical,74.50,109.52,true,2023-06-14 00:00:00
+PRD-0165,Home Product 0165,Home,physical,175.99,258.71,true,2023-06-15 00:00:00
+PRD-0166,Grocery Product 0166,Grocery,physical,46.59,71.28,true,2023-06-16 00:00:00
+PRD-0167,Office Product 0167,Office,physical,49.00,107.31,true,2023-06-17 00:00:00
+PRD-0168,Clothing Product 0168,Clothing,physical,139.49,238.53,true,2023-06-18 00:00:00
+PRD-0169,Grocery Product 0169,Grocery,physical,30.33,62.78,true,2023-06-19 00:00:00
+PRD-0170,Books Product 0170,Books,digital,116.04,167.10,true,2023-06-20 00:00:00
+PRD-0171,Office Product 0171,Office,physical,22.85,38.39,true,2023-06-21 00:00:00
+PRD-0172,Grocery Product 0172,Grocery,physical,36.37,52.01,true,2023-06-22 00:00:00
+PRD-0173,Electronics Product 0173,Electronics,physical,127.93,328.78,true,2023-06-23 00:00:00
+PRD-0174,Home Product 0174,Home,physical,5.74,14.41,true,2023-06-24 00:00:00
+PRD-0175,Books Product 0175,Books,physical,174.68,331.89,true,2023-06-25 00:00:00
+PRD-0176,Clothing Product 0176,Clothing,physical,64.92,133.74,true,2023-06-26 00:00:00
+PRD-0177,Toys Product 0177,Toys,physical,151.52,286.37,true,2023-06-27 00:00:00
+PRD-0178,Home Product 0178,Home,physical,51.46,89.03,true,2023-06-28 00:00:00
+PRD-0179,Health & Beauty Product 0179,Health & Beauty,physical,173.59,279.48,true,2023-06-29 00:00:00
+PRD-0180,Electronics Product 0180,Electronics,digital,136.51,282.58,true,2023-06-30 00:00:00
+PRD-0181,Books Product 0181,Books,physical,170.45,417.60,true,2023-07-01 00:00:00
+PRD-0182,Grocery Product 0182,Grocery,physical,55.84,129.55,true,2023-07-02 00:00:00
+PRD-0183,Books Product 0183,Books,physical,18.34,44.20,true,2023-07-03 00:00:00
+PRD-0184,Clothing Product 0184,Clothing,physical,78.37,121.47,true,2023-07-04 00:00:00
+PRD-0185,Toys Product 0185,Toys,physical,152.60,215.17,true,2023-07-05 00:00:00
+PRD-0186,Toys Product 0186,Toys,physical,167.58,358.62,true,2023-07-06 00:00:00
+PRD-0187,Toys Product 0187,Toys,physical,84.34,197.36,true,2023-07-07 00:00:00
+PRD-0188,Home Product 0188,Home,physical,65.95,92.33,false,2023-07-08 00:00:00
+PRD-0189,Office Product 0189,Office,physical,105.56,261.79,true,2023-07-09 00:00:00
+PRD-0190,Books Product 0190,Books,digital,20.60,35.02,true,2023-07-10 00:00:00
+PRD-0191,Home Product 0191,Home,physical,24.20,42.35,true,2023-07-11 00:00:00
+PRD-0192,Sports Product 0192,Sports,physical,133.87,255.69,true,2023-07-12 00:00:00
+PRD-0193,Sports Product 0193,Sports,physical,159.36,312.35,true,2023-07-13 00:00:00
+PRD-0194,Electronics Product 0194,Electronics,physical,85.82,176.79,true,2023-07-14 00:00:00
+PRD-0195,Sports Product 0195,Sports,physical,179.34,380.20,true,2023-07-15 00:00:00
+PRD-0196,Sports Product 0196,Sports,physical,145.99,258.40,true,2023-07-16 00:00:00
+PRD-0197,Sports Product 0197,Sports,physical,48.82,101.06,true,2023-07-17 00:00:00
+PRD-0198,Books Product 0198,Books,physical,84.98,160.61,true,2023-07-18 00:00:00
+PRD-0199,Grocery Product 0199,Grocery,physical,173.89,406.90,true,2023-07-19 00:00:00
+PRD-0200,Electronics Product 0200,Electronics,digital,91.45,179.24,true,2023-07-20 00:00:00
+PRD-0201,Clothing Product 0201,Clothing,physical,32.70,66.38,true,2023-07-21 00:00:00
+PRD-0202,Health & Beauty Product 0202,Health & Beauty,physical,33.53,86.84,true,2023-07-22 00:00:00
+PRD-0203,Toys Product 0203,Toys,physical,97.91,166.45,true,2023-07-23 00:00:00
+PRD-0204,Clothing Product 0204,Clothing,physical,92.08,165.74,true,2023-07-24 00:00:00
+PRD-0205,Books Product 0205,Books,physical,34.22,50.65,true,2023-07-25 00:00:00
+PRD-0206,Grocery Product 0206,Grocery,physical,53.25,91.59,true,2023-07-26 00:00:00
+PRD-0207,Clothing Product 0207,Clothing,physical,122.04,286.79,true,2023-07-27 00:00:00
+PRD-0208,Sports Product 0208,Sports,physical,169.42,279.54,true,2023-07-28 00:00:00
+PRD-0209,Books Product 0209,Books,physical,22.02,46.90,true,2023-07-29 00:00:00
+PRD-0210,Books Product 0210,Books,digital,19.41,28.92,true,2023-07-30 00:00:00
+PRD-0211,Pet Supplies Product 0211,Pet Supplies,physical,148.73,358.44,true,2023-07-31 00:00:00
+PRD-0212,Grocery Product 0212,Grocery,physical,133.93,223.66,true,2023-08-01 00:00:00
+PRD-0213,Clothing Product 0213,Clothing,physical,69.80,173.80,true,2023-08-02 00:00:00
+PRD-0214,Electronics Product 0214,Electronics,physical,61.56,94.19,true,2023-08-03 00:00:00
+PRD-0215,Electronics Product 0215,Electronics,physical,174.42,413.38,true,2023-08-04 00:00:00
+PRD-0216,Electronics Product 0216,Electronics,physical,53.66,77.27,true,2023-08-05 00:00:00
+PRD-0217,Sports Product 0217,Sports,physical,90.35,227.68,true,2023-08-06 00:00:00
+PRD-0218,Sports Product 0218,Sports,physical,171.20,347.54,true,2023-08-07 00:00:00
+PRD-0219,Health & Beauty Product 0219,Health & Beauty,physical,156.30,342.30,true,2023-08-08 00:00:00
+PRD-0220,Books Product 0220,Books,digital,40.08,93.79,true,2023-08-09 00:00:00
+PRD-0221,Home Product 0221,Home,physical,135.72,257.87,true,2023-08-10 00:00:00
+PRD-0222,Health & Beauty Product 0222,Health & Beauty,physical,162.85,338.73,true,2023-08-11 00:00:00
+PRD-0223,Clothing Product 0223,Clothing,physical,148.93,387.22,true,2023-08-12 00:00:00
+PRD-0224,Books Product 0224,Books,physical,18.80,35.16,true,2023-08-13 00:00:00
+PRD-0225,Office Product 0225,Office,physical,126.62,307.69,true,2023-08-14 00:00:00
+PRD-0226,Grocery Product 0226,Grocery,physical,36.79,85.72,true,2023-08-15 00:00:00
+PRD-0227,Books Product 0227,Books,physical,46.46,108.72,true,2023-08-16 00:00:00
+PRD-0228,Health & Beauty Product 0228,Health & Beauty,physical,127.40,296.84,true,2023-08-17 00:00:00
+PRD-0229,Electronics Product 0229,Electronics,physical,42.31,85.47,true,2023-08-18 00:00:00
+PRD-0230,Books Product 0230,Books,digital,78.15,185.22,true,2023-08-19 00:00:00
+PRD-0231,Grocery Product 0231,Grocery,physical,65.10,110.02,true,2023-08-20 00:00:00
+PRD-0232,Clothing Product 0232,Clothing,physical,59.91,153.97,true,2023-08-21 00:00:00
+PRD-0233,Grocery Product 0233,Grocery,physical,174.96,337.67,true,2023-08-22 00:00:00
+PRD-0234,Books Product 0234,Books,physical,37.53,52.54,true,2023-08-23 00:00:00
+PRD-0235,Sports Product 0235,Sports,physical,19.66,35.39,false,2023-08-24 00:00:00
+PRD-0236,Clothing Product 0236,Clothing,physical,63.17,115.60,true,2023-08-25 00:00:00
+PRD-0237,Pet Supplies Product 0237,Pet Supplies,physical,23.94,44.53,true,2023-08-26 00:00:00
+PRD-0238,Health & Beauty Product 0238,Health & Beauty,physical,103.54,194.66,true,2023-08-27 00:00:00
+PRD-0239,Grocery Product 0239,Grocery,physical,175.07,292.37,true,2023-08-28 00:00:00
+PRD-0240,Books Product 0240,Books,digital,132.95,332.38,true,2023-08-29 00:00:00
+PRD-0241,Sports Product 0241,Sports,physical,43.26,89.98,true,2023-08-30 00:00:00
+PRD-0242,Electronics Product 0242,Electronics,physical,132.67,325.04,true,2023-08-31 00:00:00
+PRD-0243,Electronics Product 0243,Electronics,physical,11.43,21.37,true,2023-09-01 00:00:00
+PRD-0244,Health & Beauty Product 0244,Health & Beauty,physical,72.05,133.29,true,2023-09-02 00:00:00
+PRD-0245,Books Product 0245,Books,physical,113.93,166.34,true,2023-09-03 00:00:00
+PRD-0246,Home Product 0246,Home,physical,44.51,97.92,true,2023-09-04 00:00:00
+PRD-0247,Clothing Product 0247,Clothing,physical,114.85,298.61,true,2023-09-05 00:00:00
+PRD-0248,Home Product 0248,Home,physical,50.68,125.18,true,2023-09-06 00:00:00
+PRD-0249,Toys Product 0249,Toys,physical,46.81,65.53,true,2023-09-07 00:00:00
+PRD-0250,Electronics Product 0250,Electronics,digital,139.90,268.61,true,2023-09-08 00:00:00
+PRD-0251,Electronics Product 0251,Electronics,physical,9.54,23.37,true,2023-09-09 00:00:00
+PRD-0252,Pet Supplies Product 0252,Pet Supplies,physical,110.29,258.08,true,2023-09-10 00:00:00
+PRD-0253,Toys Product 0253,Toys,physical,161.23,346.64,true,2023-09-11 00:00:00
+PRD-0254,Office Product 0254,Office,physical,32.95,57.66,true,2023-09-12 00:00:00
+PRD-0255,Clothing Product 0255,Clothing,physical,161.56,319.89,true,2023-09-13 00:00:00
+PRD-0256,Clothing Product 0256,Clothing,physical,138.63,260.62,true,2023-09-14 00:00:00
+PRD-0257,Health & Beauty Product 0257,Health & Beauty,physical,12.68,23.33,true,2023-09-15 00:00:00
+PRD-0258,Pet Supplies Product 0258,Pet Supplies,physical,41.84,80.33,true,2023-09-16 00:00:00
+PRD-0259,Pet Supplies Product 0259,Pet Supplies,physical,2.65,6.84,true,2023-09-17 00:00:00
+PRD-0260,Electronics Product 0260,Electronics,digital,49.42,114.65,true,2023-09-18 00:00:00
+PRD-0261,Home Product 0261,Home,physical,34.02,78.59,true,2023-09-19 00:00:00
+PRD-0262,Electronics Product 0262,Electronics,physical,170.64,399.30,true,2023-09-20 00:00:00
+PRD-0263,Pet Supplies Product 0263,Pet Supplies,physical,44.89,69.58,true,2023-09-21 00:00:00
+PRD-0264,Office Product 0264,Office,physical,37.83,78.69,true,2023-09-22 00:00:00
+PRD-0265,Books Product 0265,Books,physical,65.98,98.97,true,2023-09-23 00:00:00
+PRD-0266,Grocery Product 0266,Grocery,physical,143.32,308.14,true,2023-09-24 00:00:00
+PRD-0267,Office Product 0267,Office,physical,94.77,226.50,true,2023-09-25 00:00:00
+PRD-0268,Sports Product 0268,Sports,physical,101.86,223.07,true,2023-09-26 00:00:00
+PRD-0269,Home Product 0269,Home,physical,170.50,312.02,true,2023-09-27 00:00:00
+PRD-0270,Electronics Product 0270,Electronics,digital,55.00,127.60,true,2023-09-28 00:00:00
+PRD-0271,Clothing Product 0271,Clothing,physical,59.13,104.66,true,2023-09-29 00:00:00
+PRD-0272,Health & Beauty Product 0272,Health & Beauty,physical,173.94,250.47,true,2023-09-30 00:00:00
+PRD-0273,Books Product 0273,Books,physical,142.26,288.79,true,2023-10-01 00:00:00
+PRD-0274,Grocery Product 0274,Grocery,physical,53.88,113.15,true,2023-10-02 00:00:00
+PRD-0275,Clothing Product 0275,Clothing,physical,54.53,121.06,true,2023-10-03 00:00:00
+PRD-0276,Sports Product 0276,Sports,physical,170.83,442.45,true,2023-10-04 00:00:00
+PRD-0277,Sports Product 0277,Sports,physical,71.88,130.82,true,2023-10-05 00:00:00
+PRD-0278,Pet Supplies Product 0278,Pet Supplies,physical,68.88,176.33,true,2023-10-06 00:00:00
+PRD-0279,Home Product 0279,Home,physical,91.11,163.09,true,2023-10-07 00:00:00
+PRD-0280,Books Product 0280,Books,digital,34.50,81.08,true,2023-10-08 00:00:00
+PRD-0281,Sports Product 0281,Sports,physical,33.76,69.88,true,2023-10-09 00:00:00
+PRD-0282,Health & Beauty Product 0282,Health & Beauty,physical,169.27,296.22,false,2023-10-10 00:00:00
+PRD-0283,Grocery Product 0283,Grocery,physical,158.33,262.83,true,2023-10-11 00:00:00
+PRD-0284,Toys Product 0284,Toys,physical,94.92,177.50,true,2023-10-12 00:00:00
+PRD-0285,Clothing Product 0285,Clothing,physical,106.23,256.01,true,2023-10-13 00:00:00
+PRD-0286,Electronics Product 0286,Electronics,physical,162.78,297.89,true,2023-10-14 00:00:00
+PRD-0287,Grocery Product 0287,Grocery,physical,161.33,285.55,true,2023-10-15 00:00:00
+PRD-0288,Electronics Product 0288,Electronics,physical,30.33,44.28,true,2023-10-16 00:00:00
+PRD-0289,Health & Beauty Product 0289,Health & Beauty,physical,74.87,134.77,true,2023-10-17 00:00:00
+PRD-0290,Books Product 0290,Books,digital,102.31,247.59,true,2023-10-18 00:00:00
+PRD-0291,Grocery Product 0291,Grocery,physical,21.14,36.15,true,2023-10-19 00:00:00
+PRD-0292,Clothing Product 0292,Clothing,physical,145.56,353.71,true,2023-10-20 00:00:00
+PRD-0293,Grocery Product 0293,Grocery,physical,7.30,16.72,true,2023-10-21 00:00:00
+PRD-0294,Clothing Product 0294,Clothing,physical,24.01,54.98,true,2023-10-22 00:00:00
+PRD-0295,Office Product 0295,Office,physical,161.79,368.88,true,2023-10-23 00:00:00
+PRD-0296,Electronics Product 0296,Electronics,physical,54.38,95.71,true,2023-10-24 00:00:00
+PRD-0297,Clothing Product 0297,Clothing,physical,47.63,89.07,true,2023-10-25 00:00:00
+PRD-0298,Pet Supplies Product 0298,Pet Supplies,physical,54.09,79.51,true,2023-10-26 00:00:00
+PRD-0299,Health & Beauty Product 0299,Health & Beauty,physical,164.02,318.20,true,2023-10-27 00:00:00
+PRD-0300,Books Product 0300,Books,digital,60.43,99.11,true,2023-10-28 00:00:00
+PRD-0301,Health & Beauty Product 0301,Health & Beauty,physical,105.29,248.48,true,2023-10-29 00:00:00
+PRD-0302,Books Product 0302,Books,physical,36.38,56.39,true,2023-10-30 00:00:00
+PRD-0303,Grocery Product 0303,Grocery,physical,150.27,288.52,true,2023-10-31 00:00:00
+PRD-0304,Toys Product 0304,Toys,physical,175.03,425.32,true,2023-11-01 00:00:00
+PRD-0305,Electronics Product 0305,Electronics,physical,110.55,232.16,true,2023-11-02 00:00:00
+PRD-0306,Pet Supplies Product 0306,Pet Supplies,physical,105.62,158.43,true,2023-11-03 00:00:00
+PRD-0307,Grocery Product 0307,Grocery,physical,149.58,263.26,true,2023-11-04 00:00:00
+PRD-0308,Grocery Product 0308,Grocery,physical,15.20,22.80,true,2023-11-05 00:00:00
+PRD-0309,Toys Product 0309,Toys,physical,36.87,55.31,true,2023-11-06 00:00:00
+PRD-0310,Electronics Product 0310,Electronics,digital,120.22,260.88,true,2023-11-07 00:00:00
+PRD-0311,Pet Supplies Product 0311,Pet Supplies,physical,150.33,311.18,true,2023-11-08 00:00:00
+PRD-0312,Sports Product 0312,Sports,physical,115.55,254.21,true,2023-11-09 00:00:00
+PRD-0313,Health & Beauty Product 0313,Health & Beauty,physical,179.38,304.95,true,2023-11-10 00:00:00
+PRD-0314,Electronics Product 0314,Electronics,physical,23.77,49.20,true,2023-11-11 00:00:00
+PRD-0315,Health & Beauty Product 0315,Health & Beauty,physical,177.44,303.42,true,2023-11-12 00:00:00
+PRD-0316,Electronics Product 0316,Electronics,physical,38.19,56.52,true,2023-11-13 00:00:00
+PRD-0317,Books Product 0317,Books,physical,77.70,149.96,true,2023-11-14 00:00:00
+PRD-0318,Grocery Product 0318,Grocery,physical,32.29,62.00,true,2023-11-15 00:00:00
+PRD-0319,Health & Beauty Product 0319,Health & Beauty,physical,54.22,135.55,true,2023-11-16 00:00:00
+PRD-0320,Electronics Product 0320,Electronics,digital,117.59,237.53,true,2023-11-17 00:00:00
+PRD-0321,Toys Product 0321,Toys,physical,67.46,138.29,true,2023-11-18 00:00:00
+PRD-0322,Office Product 0322,Office,physical,154.52,350.76,true,2023-11-19 00:00:00
+PRD-0323,Health & Beauty Product 0323,Health & Beauty,physical,170.34,403.71,true,2023-11-20 00:00:00
+PRD-0324,Health & Beauty Product 0324,Health & Beauty,physical,83.20,179.71,true,2023-11-21 00:00:00
+PRD-0325,Books Product 0325,Books,physical,175.74,300.52,true,2023-11-22 00:00:00
+PRD-0326,Pet Supplies Product 0326,Pet Supplies,physical,106.85,164.55,true,2023-11-23 00:00:00
+PRD-0327,Clothing Product 0327,Clothing,physical,120.46,311.99,true,2023-11-24 00:00:00
+PRD-0328,Health & Beauty Product 0328,Health & Beauty,physical,167.12,396.07,true,2023-11-25 00:00:00
+PRD-0329,Home Product 0329,Home,physical,23.72,37.95,false,2023-11-26 00:00:00
+PRD-0330,Books Product 0330,Books,digital,84.74,215.24,true,2023-11-27 00:00:00
+PRD-0331,Toys Product 0331,Toys,physical,83.68,185.77,true,2023-11-28 00:00:00
+PRD-0332,Books Product 0332,Books,physical,156.89,393.79,true,2023-11-29 00:00:00
+PRD-0333,Sports Product 0333,Sports,physical,81.50,202.12,true,2023-11-30 00:00:00
+PRD-0334,Electronics Product 0334,Electronics,physical,133.84,321.22,true,2023-12-01 00:00:00
+PRD-0335,Home Product 0335,Home,physical,99.51,253.75,true,2023-12-02 00:00:00
+PRD-0336,Home Product 0336,Home,physical,137.68,260.22,true,2023-12-03 00:00:00
+PRD-0337,Electronics Product 0337,Electronics,physical,113.91,169.73,true,2023-12-04 00:00:00
+PRD-0338,Grocery Product 0338,Grocery,physical,15.37,38.58,true,2023-12-05 00:00:00
+PRD-0339,Health & Beauty Product 0339,Health & Beauty,physical,58.42,89.97,true,2023-12-06 00:00:00
+PRD-0340,Electronics Product 0340,Electronics,digital,147.35,318.28,true,2023-12-07 00:00:00
+PRD-0341,Clothing Product 0341,Clothing,physical,65.07,131.44,true,2023-12-08 00:00:00
+PRD-0342,Books Product 0342,Books,physical,15.31,38.58,true,2023-12-09 00:00:00
+PRD-0343,Health & Beauty Product 0343,Health & Beauty,physical,7.61,13.47,true,2023-12-10 00:00:00
+PRD-0344,Electronics Product 0344,Electronics,physical,60.79,103.34,true,2023-12-11 00:00:00
+PRD-0345,Pet Supplies Product 0345,Pet Supplies,physical,149.04,290.63,true,2023-12-12 00:00:00
+PRD-0346,Clothing Product 0346,Clothing,physical,174.30,343.37,true,2023-12-13 00:00:00
+PRD-0347,Books Product 0347,Books,physical,124.53,285.17,true,2023-12-14 00:00:00
+PRD-0348,Sports Product 0348,Sports,physical,158.90,332.10,true,2023-12-15 00:00:00
+PRD-0349,Books Product 0349,Books,physical,146.45,224.07,true,2023-12-16 00:00:00
+PRD-0350,Books Product 0350,Books,digital,97.58,243.95,true,2023-12-17 00:00:00
+PRD-0351,Sports Product 0351,Sports,physical,28.66,72.22,true,2023-12-18 00:00:00
+PRD-0352,Health & Beauty Product 0352,Health & Beauty,physical,101.69,222.70,true,2023-12-19 00:00:00
+PRD-0353,Electronics Product 0353,Electronics,physical,117.17,289.41,true,2023-12-20 00:00:00
+PRD-0354,Office Product 0354,Office,physical,134.64,302.94,true,2023-12-21 00:00:00
+PRD-0355,Electronics Product 0355,Electronics,physical,158.52,407.40,true,2023-12-22 00:00:00
+PRD-0356,Grocery Product 0356,Grocery,physical,34.13,48.12,true,2023-12-23 00:00:00
+PRD-0357,Sports Product 0357,Sports,physical,49.66,121.67,true,2023-12-24 00:00:00
+PRD-0358,Electronics Product 0358,Electronics,physical,41.30,59.47,true,2023-12-25 00:00:00
+PRD-0359,Home Product 0359,Home,physical,94.67,145.79,true,2023-12-26 00:00:00
+PRD-0360,Books Product 0360,Books,digital,64.75,96.48,true,2023-12-27 00:00:00
+PRD-0361,Books Product 0361,Books,physical,149.41,292.84,true,2023-12-28 00:00:00
+PRD-0362,Health & Beauty Product 0362,Health & Beauty,physical,53.63,127.10,true,2023-12-29 00:00:00
+PRD-0363,Office Product 0363,Office,physical,78.13,115.63,true,2023-12-30 00:00:00
+PRD-0364,Health & Beauty Product 0364,Health & Beauty,physical,136.96,299.94,true,2023-12-31 00:00:00
+PRD-0365,Books Product 0365,Books,physical,119.08,241.73,true,2023-01-01 00:00:00
+PRD-0366,Health & Beauty Product 0366,Health & Beauty,physical,177.65,435.24,true,2023-01-02 00:00:00
+PRD-0367,Books Product 0367,Books,physical,17.49,45.12,true,2023-01-03 00:00:00
+PRD-0368,Grocery Product 0368,Grocery,physical,7.63,19.08,true,2023-01-04 00:00:00
+PRD-0369,Toys Product 0369,Toys,physical,102.88,163.58,true,2023-01-05 00:00:00
+PRD-0370,Electronics Product 0370,Electronics,digital,19.73,35.32,true,2023-01-06 00:00:00
+PRD-0371,Health & Beauty Product 0371,Health & Beauty,physical,131.69,227.82,true,2023-01-07 00:00:00
+PRD-0372,Sports Product 0372,Sports,physical,16.35,23.71,true,2023-01-08 00:00:00
+PRD-0373,Toys Product 0373,Toys,physical,72.17,108.26,true,2023-01-09 00:00:00
+PRD-0374,Books Product 0374,Books,physical,57.35,96.92,true,2023-01-10 00:00:00
+PRD-0375,Sports Product 0375,Sports,physical,109.81,213.03,true,2023-01-11 00:00:00
+PRD-0376,Electronics Product 0376,Electronics,physical,156.73,250.77,false,2023-01-12 00:00:00
+PRD-0377,Pet Supplies Product 0377,Pet Supplies,physical,38.23,65.37,true,2023-01-13 00:00:00
+PRD-0378,Electronics Product 0378,Electronics,physical,53.33,95.99,true,2023-01-14 00:00:00
+PRD-0379,Office Product 0379,Office,physical,25.13,61.32,true,2023-01-15 00:00:00
+PRD-0380,Books Product 0380,Books,digital,66.11,110.40,true,2023-01-16 00:00:00
+PRD-0381,Electronics Product 0381,Electronics,physical,69.08,142.30,true,2023-01-17 00:00:00
+PRD-0382,Electronics Product 0382,Electronics,physical,101.69,212.53,true,2023-01-18 00:00:00
+PRD-0383,Sports Product 0383,Sports,physical,105.02,169.08,true,2023-01-19 00:00:00
+PRD-0384,Office Product 0384,Office,physical,130.94,331.28,true,2023-01-20 00:00:00
+PRD-0385,Clothing Product 0385,Clothing,physical,61.34,135.56,true,2023-01-21 00:00:00
+PRD-0386,Grocery Product 0386,Grocery,physical,111.48,289.85,true,2023-01-22 00:00:00
+PRD-0387,Home Product 0387,Home,physical,166.95,245.42,true,2023-01-23 00:00:00
+PRD-0388,Office Product 0388,Office,physical,127.00,193.04,true,2023-01-24 00:00:00
+PRD-0389,Sports Product 0389,Sports,physical,24.08,45.51,true,2023-01-25 00:00:00
+PRD-0390,Books Product 0390,Books,digital,83.00,145.25,true,2023-01-26 00:00:00
+PRD-0391,Office Product 0391,Office,physical,138.79,259.54,true,2023-01-27 00:00:00
+PRD-0392,Clothing Product 0392,Clothing,physical,52.55,125.07,true,2023-01-28 00:00:00
+PRD-0393,Books Product 0393,Books,physical,133.64,285.99,true,2023-01-29 00:00:00
+PRD-0394,Grocery Product 0394,Grocery,physical,109.70,168.94,true,2023-01-30 00:00:00
+PRD-0395,Health & Beauty Product 0395,Health & Beauty,physical,60.21,98.74,true,2023-01-31 00:00:00
+PRD-0396,Health & Beauty Product 0396,Health & Beauty,physical,130.60,215.49,true,2023-02-01 00:00:00
+PRD-0397,Grocery Product 0397,Grocery,physical,45.15,111.07,true,2023-02-02 00:00:00
+PRD-0398,Grocery Product 0398,Grocery,physical,35.24,88.45,true,2023-02-03 00:00:00
+PRD-0399,Clothing Product 0399,Clothing,physical,81.68,135.59,true,2023-02-04 00:00:00
+PRD-0400,Electronics Product 0400,Electronics,digital,108.50,274.51,true,2023-02-05 00:00:00
+PRD-0401,Toys Product 0401,Toys,physical,175.68,267.03,true,2023-02-06 00:00:00
+PRD-0402,Toys Product 0402,Toys,physical,117.09,262.28,true,2023-02-07 00:00:00
+PRD-0403,Clothing Product 0403,Clothing,physical,78.29,168.32,true,2023-02-08 00:00:00
+PRD-0404,Grocery Product 0404,Grocery,physical,42.82,71.08,true,2023-02-09 00:00:00
+PRD-0405,Toys Product 0405,Toys,physical,86.88,153.78,true,2023-02-10 00:00:00
+PRD-0406,Home Product 0406,Home,physical,160.05,377.72,true,2023-02-11 00:00:00
+PRD-0407,Sports Product 0407,Sports,physical,38.04,62.77,true,2023-02-12 00:00:00
+PRD-0408,Toys Product 0408,Toys,physical,157.99,330.20,true,2023-02-13 00:00:00
+PRD-0409,Toys Product 0409,Toys,physical,117.54,250.36,true,2023-02-14 00:00:00
+PRD-0410,Books Product 0410,Books,digital,172.42,284.49,true,2023-02-15 00:00:00
+PRD-0411,Office Product 0411,Office,physical,150.43,388.11,true,2023-02-16 00:00:00
+PRD-0412,Health & Beauty Product 0412,Health & Beauty,physical,100.05,156.08,true,2023-02-17 00:00:00
+PRD-0413,Pet Supplies Product 0413,Pet Supplies,physical,95.88,234.91,true,2023-02-18 00:00:00
+PRD-0414,Clothing Product 0414,Clothing,physical,104.83,146.76,true,2023-02-19 00:00:00
+PRD-0415,Books Product 0415,Books,physical,12.36,17.92,true,2023-02-20 00:00:00
+PRD-0416,Grocery Product 0416,Grocery,physical,6.11,14.24,true,2023-02-21 00:00:00
+PRD-0417,Home Product 0417,Home,physical,99.27,231.30,true,2023-02-22 00:00:00
+PRD-0418,Grocery Product 0418,Grocery,physical,155.44,329.53,true,2023-02-23 00:00:00
+PRD-0419,Office Product 0419,Office,physical,139.83,362.16,true,2023-02-24 00:00:00
+PRD-0420,Books Product 0420,Books,digital,116.08,284.40,true,2023-02-25 00:00:00
+PRD-0421,Sports Product 0421,Sports,physical,83.65,200.76,true,2023-02-26 00:00:00
+PRD-0422,Grocery Product 0422,Grocery,physical,163.99,329.62,true,2023-02-27 00:00:00
+PRD-0423,Books Product 0423,Books,physical,100.27,192.52,false,2023-02-28 00:00:00
+PRD-0424,Books Product 0424,Books,physical,53.16,107.38,true,2023-03-01 00:00:00
+PRD-0425,Books Product 0425,Books,physical,144.45,268.68,true,2023-03-02 00:00:00
+PRD-0426,Sports Product 0426,Sports,physical,41.81,99.93,true,2023-03-03 00:00:00
+PRD-0427,Health & Beauty Product 0427,Health & Beauty,physical,37.76,88.74,true,2023-03-04 00:00:00
+PRD-0428,Grocery Product 0428,Grocery,physical,117.22,227.41,true,2023-03-05 00:00:00
+PRD-0429,Electronics Product 0429,Electronics,physical,9.92,14.19,true,2023-03-06 00:00:00
+PRD-0430,Books Product 0430,Books,digital,167.10,300.78,true,2023-03-07 00:00:00
+PRD-0431,Office Product 0431,Office,physical,155.26,239.10,true,2023-03-08 00:00:00
+PRD-0432,Grocery Product 0432,Grocery,physical,98.42,140.74,true,2023-03-09 00:00:00
+PRD-0433,Health & Beauty Product 0433,Health & Beauty,physical,55.05,86.43,true,2023-03-10 00:00:00
+PRD-0434,Electronics Product 0434,Electronics,physical,36.30,79.50,true,2023-03-11 00:00:00
+PRD-0435,Electronics Product 0435,Electronics,physical,13.65,21.29,true,2023-03-12 00:00:00
+PRD-0436,Sports Product 0436,Sports,physical,47.46,115.80,true,2023-03-13 00:00:00
+PRD-0437,Pet Supplies Product 0437,Pet Supplies,physical,32.82,78.44,true,2023-03-14 00:00:00
+PRD-0438,Clothing Product 0438,Clothing,physical,135.47,238.43,true,2023-03-15 00:00:00
+PRD-0439,Office Product 0439,Office,physical,149.37,238.99,true,2023-03-16 00:00:00
+PRD-0440,Electronics Product 0440,Electronics,digital,25.57,36.57,true,2023-03-17 00:00:00
+PRD-0441,Clothing Product 0441,Clothing,physical,91.21,193.37,true,2023-03-18 00:00:00
+PRD-0442,Books Product 0442,Books,physical,83.48,129.39,true,2023-03-19 00:00:00
+PRD-0443,Books Product 0443,Books,physical,98.18,164.94,true,2023-03-20 00:00:00
+PRD-0444,Electronics Product 0444,Electronics,physical,65.36,139.22,true,2023-03-21 00:00:00
+PRD-0445,Health & Beauty Product 0445,Health & Beauty,physical,168.00,341.04,true,2023-03-22 00:00:00
+PRD-0446,Toys Product 0446,Toys,physical,93.92,154.03,true,2023-03-23 00:00:00
+PRD-0447,Pet Supplies Product 0447,Pet Supplies,physical,147.07,210.31,true,2023-03-24 00:00:00
+PRD-0448,Home Product 0448,Home,physical,115.05,195.59,true,2023-03-25 00:00:00
+PRD-0449,Home Product 0449,Home,physical,92.86,160.65,true,2023-03-26 00:00:00
+PRD-0450,Electronics Product 0450,Electronics,digital,136.90,297.07,true,2023-03-27 00:00:00
+PRD-0451,Pet Supplies Product 0451,Pet Supplies,physical,64.00,157.44,true,2023-03-28 00:00:00
+PRD-0452,Sports Product 0452,Sports,physical,138.26,344.27,true,2023-03-29 00:00:00
+PRD-0453,Health & Beauty Product 0453,Health & Beauty,physical,63.15,146.51,true,2023-03-30 00:00:00
+PRD-0454,Sports Product 0454,Sports,physical,53.92,109.46,true,2023-03-31 00:00:00
+PRD-0455,Electronics Product 0455,Electronics,physical,151.82,327.93,true,2023-04-01 00:00:00
+PRD-0456,Home Product 0456,Home,physical,116.02,293.53,true,2023-04-02 00:00:00
+PRD-0457,Grocery Product 0457,Grocery,physical,27.31,56.80,true,2023-04-03 00:00:00
+PRD-0458,Clothing Product 0458,Clothing,physical,161.50,332.69,true,2023-04-04 00:00:00
+PRD-0459,Home Product 0459,Home,physical,138.24,203.21,true,2023-04-05 00:00:00
+PRD-0460,Electronics Product 0460,Electronics,digital,49.66,89.88,true,2023-04-06 00:00:00
+PRD-0461,Sports Product 0461,Sports,physical,112.08,195.02,true,2023-04-07 00:00:00
+PRD-0462,Toys Product 0462,Toys,physical,161.59,290.86,true,2023-04-08 00:00:00
+PRD-0463,Home Product 0463,Home,physical,2.54,6.53,true,2023-04-09 00:00:00
+PRD-0464,Health & Beauty Product 0464,Health & Beauty,physical,96.61,157.47,true,2023-04-10 00:00:00
+PRD-0465,Health & Beauty Product 0465,Health & Beauty,physical,163.29,289.02,true,2023-04-11 00:00:00
+PRD-0466,Books Product 0466,Books,physical,164.65,340.83,true,2023-04-12 00:00:00
+PRD-0467,Books Product 0467,Books,physical,10.81,21.73,true,2023-04-13 00:00:00
+PRD-0468,Pet Supplies Product 0468,Pet Supplies,physical,94.50,151.20,true,2023-04-14 00:00:00
+PRD-0469,Books Product 0469,Books,physical,86.19,135.32,true,2023-04-15 00:00:00
+PRD-0470,Electronics Product 0470,Electronics,digital,64.57,134.95,false,2023-04-16 00:00:00
+PRD-0471,Grocery Product 0471,Grocery,physical,159.98,294.36,true,2023-04-17 00:00:00
+PRD-0472,Pet Supplies Product 0472,Pet Supplies,physical,76.87,123.76,true,2023-04-18 00:00:00
+PRD-0473,Health & Beauty Product 0473,Health & Beauty,physical,12.40,31.25,true,2023-04-19 00:00:00
+PRD-0474,Health & Beauty Product 0474,Health & Beauty,physical,156.81,406.14,true,2023-04-20 00:00:00
+PRD-0475,Grocery Product 0475,Grocery,physical,109.75,181.09,true,2023-04-21 00:00:00
+PRD-0476,Books Product 0476,Books,physical,147.65,225.90,true,2023-04-22 00:00:00
+PRD-0477,Office Product 0477,Office,physical,90.11,145.08,true,2023-04-23 00:00:00
+PRD-0478,Toys Product 0478,Toys,physical,49.23,117.17,true,2023-04-24 00:00:00
+PRD-0479,Clothing Product 0479,Clothing,physical,28.47,67.76,true,2023-04-25 00:00:00
+PRD-0480,Electronics Product 0480,Electronics,digital,84.22,213.92,true,2023-04-26 00:00:00
+PRD-0481,Electronics Product 0481,Electronics,physical,177.53,282.27,true,2023-04-27 00:00:00
+PRD-0482,Clothing Product 0482,Clothing,physical,40.72,103.84,true,2023-04-28 00:00:00
+PRD-0483,Sports Product 0483,Sports,physical,63.51,122.57,true,2023-04-29 00:00:00
+PRD-0484,Pet Supplies Product 0484,Pet Supplies,physical,165.02,330.04,true,2023-04-30 00:00:00
+PRD-0485,Grocery Product 0485,Grocery,physical,53.79,113.50,true,2023-05-01 00:00:00
+PRD-0486,Books Product 0486,Books,physical,37.82,77.91,true,2023-05-02 00:00:00
+PRD-0487,Grocery Product 0487,Grocery,physical,137.25,253.91,true,2023-05-03 00:00:00
+PRD-0488,Clothing Product 0488,Clothing,physical,113.83,227.66,true,2023-05-04 00:00:00
+PRD-0489,Books Product 0489,Books,physical,66.89,145.15,true,2023-05-05 00:00:00
+PRD-0490,Books Product 0490,Books,digital,6.73,12.38,true,2023-05-06 00:00:00
+PRD-0491,Home Product 0491,Home,physical,112.20,247.96,true,2023-05-07 00:00:00
+PRD-0492,Books Product 0492,Books,physical,155.14,370.78,true,2023-05-08 00:00:00
+PRD-0493,Pet Supplies Product 0493,Pet Supplies,physical,40.21,68.36,true,2023-05-09 00:00:00
+PRD-0494,Office Product 0494,Office,physical,107.15,192.87,true,2023-05-10 00:00:00
+PRD-0495,Toys Product 0495,Toys,physical,152.73,252.00,true,2023-05-11 00:00:00
+PRD-0496,Books Product 0496,Books,physical,105.61,217.56,true,2023-05-12 00:00:00
+PRD-0497,Health & Beauty Product 0497,Health & Beauty,physical,155.64,300.39,true,2023-05-13 00:00:00
+PRD-0498,Grocery Product 0498,Grocery,physical,29.19,63.34,true,2023-05-14 00:00:00
+PRD-0499,Books Product 0499,Books,physical,98.17,228.74,true,2023-05-15 00:00:00
+PRD-0500,Electronics Product 0500,Electronics,digital,128.48,260.81,true,2023-05-16 00:00:00

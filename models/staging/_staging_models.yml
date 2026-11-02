@@ -1,0 +1,212 @@
+version: 2
+
+models:
+  - name: view_customers
+    description: Clean customer view at one row per customer; standardizes segment, region, country code, dates, and timestamps without changing source grain.
+    columns:
+      - name: customer_id
+        description: Stable synthetic customer identifier and model primary key.
+        data_tests: [not_null, unique]
+      - name: signup_date
+        description: Date on which the customer joined the retailer.
+        data_tests: [not_null]
+      - name: customer_segment
+        description: Normalized customer classification.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [consumer, small_business]
+      - name: region
+        description: Normalized German sales region.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [North, South, East, West]
+      - name: country_code
+        description: Uppercase ISO country code.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [DE]
+      - name: updated_at
+        description: Timestamp of the latest source update.
+        data_tests: [not_null]
+
+  - name: view_products
+    description: Clean product view at one row per product; preserves descriptive attributes and standardized numeric types.
+    columns:
+      - name: product_id
+        description: Stable synthetic product identifier and model primary key.
+        data_tests: [not_null, unique]
+      - name: product_name
+        description: Trimmed synthetic product display name.
+        data_tests: [not_null]
+      - name: category
+        description: Product reporting category.
+        data_tests: [not_null]
+      - name: product_type
+        description: Normalized physical or digital product classification.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [physical, digital]
+      - name: unit_cost_eur
+        description: Synthetic per-unit product cost in EUR at two-decimal precision.
+        data_tests: [not_null]
+      - name: list_price_eur
+        description: Synthetic list price in EUR at two-decimal precision.
+        data_tests: [not_null]
+      - name: is_active
+        description: Boolean indicating whether the product is active.
+        data_tests: [not_null]
+      - name: updated_at
+        description: Timestamp of the latest source update.
+        data_tests: [not_null]
+
+  - name: view_orders
+    description: Clean order view at one row per order; standardizes lifecycle, channel, currency, and timestamp fields.
+    columns:
+      - name: order_id
+        description: Stable synthetic order identifier and model primary key.
+        data_tests: [not_null, unique]
+      - name: customer_id
+        description: Customer who placed the order.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_customers')
+                field: customer_id
+      - name: order_created_at
+        description: Timestamp at which the order was created.
+        data_tests: [not_null]
+      - name: order_type
+        description: Normalized physical or digital order classification.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [physical, digital]
+      - name: sales_channel
+        description: Normalized order-entry channel.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [web, mobile, marketplace, store]
+      - name: payment_status
+        description: Normalized payment lifecycle status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [paid, pending, refunded, failed]
+      - name: order_status
+        description: Normalized order lifecycle status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [placed, processing, shipped, delivered, cancelled]
+      - name: currency_code
+        description: Uppercase ISO transaction currency code.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [EUR]
+      - name: updated_at
+        description: Timestamp of the latest source update.
+        data_tests: [not_null]
+
+  - name: view_order_lines
+    description: Clean order-line view at one row per order line; preserves the transactional grain and standardizes numeric types.
+    columns:
+      - name: order_line_id
+        description: Stable synthetic order-line identifier and model primary key.
+        data_tests: [not_null, unique]
+      - name: order_id
+        description: Parent order identifier.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_orders')
+                field: order_id
+      - name: product_id
+        description: Purchased product identifier.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('view_products')
+                field: product_id
+      - name: quantity
+        description: Purchased unit count.
+        data_tests: [not_null]
+      - name: unit_price_eur
+        description: Actual unit price before line discount, in EUR.
+        data_tests: [not_null]
+      - name: discount_amount_eur
+        description: Total discount applied to the line, in EUR.
+        data_tests: [not_null]
+      - name: updated_at
+        description: Timestamp of the latest source update.
+        data_tests: [not_null]
+
+  - name: view_fulfilments
+    description: Clean physical-fulfilment view at one row per fulfilment and at most one row per order.
+    columns:
+      - name: fulfilment_id
+        description: Stable synthetic fulfilment identifier and model primary key.
+        data_tests: [not_null, unique]
+      - name: order_id
+        description: Physical order represented by the fulfilment.
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('view_orders')
+                field: order_id
+      - name: fulfilment_centre_id
+        description: Stable synthetic fulfilment-centre identifier.
+        data_tests: [not_null]
+      - name: fulfilment_centre_name
+        description: Trimmed fulfilment-centre display name.
+        data_tests: [not_null]
+      - name: fulfilment_centre_region
+        description: Normalized region in which the fulfilment centre operates.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [North, South, East, West]
+      - name: carrier_name
+        description: Trimmed synthetic delivery-carrier name.
+        data_tests: [not_null]
+      - name: fulfilment_status
+        description: Normalized operational fulfilment status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [processing, picked, shipped, delivered, cancelled]
+      - name: picked_at
+        description: Timestamp at which the order was picked; null before the event occurs.
+      - name: packed_at
+        description: Timestamp at which the order was packed; null before the event occurs.
+      - name: shipped_at
+        description: Timestamp at which the order was shipped; null before the event occurs.
+      - name: promised_delivery_date
+        description: Customer-facing promised delivery date.
+        data_tests: [not_null]
+      - name: delivered_at
+        description: Timestamp at which delivery completed; required only for delivered records.
+      - name: updated_at
+        description: Timestamp of the latest source update.
+        data_tests: [not_null]

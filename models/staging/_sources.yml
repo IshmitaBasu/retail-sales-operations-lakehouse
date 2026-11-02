@@ -1,0 +1,238 @@
+version: 2
+
+sources:
+  - name: retail_raw
+    description: Deterministic synthetic retail snapshots loaded as Databricks Delta seed tables.
+    database: workspace
+    schema: retail_raw
+    tables:
+      - name: customers
+        description: One row per synthetic customer.
+        columns:
+          - name: customer_id
+            description: Stable synthetic customer identifier.
+            data_tests:
+              - not_null
+              - unique
+          - name: signup_date
+            description: Date the customer joined the synthetic retailer.
+            data_tests:
+              - not_null
+          - name: customer_segment
+            description: Consumer or small-business classification.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [consumer, small_business]
+          - name: region
+            description: Simplified German sales region.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [North, South, East, West]
+          - name: country_code
+            description: ISO country code; fixed to DE in the first release.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [DE]
+          - name: updated_at
+            description: Source update timestamp.
+            data_tests:
+              - not_null
+
+      - name: products
+        description: One row per synthetic product.
+        columns:
+          - name: product_id
+            description: Stable synthetic product identifier.
+            data_tests:
+              - not_null
+              - unique
+          - name: product_name
+            description: Synthetic display name.
+            data_tests:
+              - not_null
+          - name: category
+            description: Product reporting category.
+            data_tests:
+              - not_null
+          - name: product_type
+            description: Physical or digital fulfilment classification.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [physical, digital]
+          - name: unit_cost_eur
+            description: Synthetic unit cost in EUR.
+            data_tests:
+              - not_null
+          - name: list_price_eur
+            description: Synthetic list price in EUR.
+            data_tests:
+              - not_null
+          - name: is_active
+            description: Whether the product is currently active.
+            data_tests:
+              - not_null
+          - name: updated_at
+            description: Source update timestamp.
+            data_tests:
+              - not_null
+
+      - name: orders
+        description: One row per synthetic retail order.
+        columns:
+          - name: order_id
+            description: Stable synthetic order identifier.
+            data_tests:
+              - not_null
+              - unique
+          - name: customer_id
+            description: Customer who placed the order.
+            data_tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('retail_raw', 'customers')
+                    field: customer_id
+          - name: order_created_at
+            description: Order creation timestamp.
+            data_tests:
+              - not_null
+          - name: order_type
+            description: Physical or digital order classification.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [physical, digital]
+          - name: sales_channel
+            description: Channel through which the order was placed.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [web, mobile, marketplace, store]
+          - name: payment_status
+            description: Simplified payment lifecycle status.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [paid, pending, refunded, failed]
+          - name: order_status
+            description: Simplified order lifecycle status.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [placed, processing, shipped, delivered, cancelled]
+          - name: currency_code
+            description: ISO currency code; fixed to EUR.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [EUR]
+          - name: updated_at
+            description: Source update timestamp used by the incremental watermark.
+            data_tests:
+              - not_null
+
+      - name: order_lines
+        description: One row per product line within an order.
+        columns:
+          - name: order_line_id
+            description: Stable synthetic order-line identifier.
+            data_tests:
+              - not_null
+              - unique
+          - name: order_id
+            description: Parent order identifier.
+            data_tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('retail_raw', 'orders')
+                    field: order_id
+          - name: product_id
+            description: Purchased product identifier.
+            data_tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('retail_raw', 'products')
+                    field: product_id
+          - name: quantity
+            description: Positive purchased unit count.
+            data_tests:
+              - not_null
+          - name: unit_price_eur
+            description: Actual per-unit selling price before the line discount.
+            data_tests:
+              - not_null
+          - name: discount_amount_eur
+            description: Total discount applied to the line.
+            data_tests:
+              - not_null
+          - name: updated_at
+            description: Line update timestamp used by the incremental watermark.
+            data_tests:
+              - not_null
+
+      - name: fulfilments
+        description: At most one physical fulfilment record per eligible order.
+        columns:
+          - name: fulfilment_id
+            description: Stable synthetic fulfilment identifier.
+            data_tests:
+              - not_null
+              - unique
+          - name: order_id
+            description: Physical order represented by the fulfilment.
+            data_tests:
+              - not_null
+              - unique
+              - relationships:
+                  arguments:
+                    to: source('retail_raw', 'orders')
+                    field: order_id
+          - name: fulfilment_centre_id
+            description: Synthetic centre identifier.
+            data_tests:
+              - not_null
+          - name: fulfilment_centre_name
+            description: Synthetic centre name.
+            data_tests:
+              - not_null
+          - name: fulfilment_centre_region
+            description: Simplified centre region.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [North, South, East, West]
+          - name: carrier_name
+            description: Synthetic carrier name.
+            data_tests:
+              - not_null
+          - name: fulfilment_status
+            description: Simplified operational fulfilment status.
+            data_tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [processing, picked, shipped, delivered, cancelled]
+          - name: promised_delivery_date
+            description: Customer promise date for the physical order.
+            data_tests:
+              - not_null
+          - name: updated_at
+            description: Source update timestamp.
+            data_tests:
+              - not_null

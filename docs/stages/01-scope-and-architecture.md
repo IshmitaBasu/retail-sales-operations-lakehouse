@@ -1,0 +1,30 @@
+# Stage 1 — Scope and architecture
+
+**Status:** Complete — architecture approved November 2, 2026
+
+## Purpose
+
+Fix a small, achievable project boundary before configuring Databricks or implementing dbt models.
+
+## Decisions
+
+- Use only deterministic synthetic retail data.
+- Cover customers, products, orders, order lines, and fulfilments from January 2024 through December 2025.
+- Build five staging views, two intermediate views, four dimensions, and two facts.
+- Demonstrate one genuine incremental Delta `merge` in `fact_order_line`.
+- Simulate inserts and updates through deterministic initial and updated source snapshots.
+- Use a single Power BI Desktop report page over certified marts only.
+- Exclude production ingestion, orchestration, SCDs, streaming, forecasting, and Power BI Service publication.
+- Use Databricks Free Edition and the included Serverless Starter Warehouse.
+
+## Review checklist
+
+- [x] Source grains are explicit.
+- [x] Fact and dimension grains are explicit.
+- [x] The incremental key, watermark, and expected behavior are explicit.
+- [x] Sales and fulfilment formulas are defined.
+- [x] Testing and reporting boundaries are defined.
+- [x] Security and cost limits are defined.
+- [x] User approves the architecture and authorizes Stage 2.
+
+The full design contract is [the architecture document](../architecture.md).
