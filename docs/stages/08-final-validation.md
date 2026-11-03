@@ -1,6 +1,6 @@
 # Stage 8 — Final validation and portfolio polish
 
-**Status:** Repository validation complete — 3 November 2026; Power BI corrections remain tracked in Stage 7
+**Status:** Complete — 3 November 2026
 
 ## Purpose
 
@@ -90,4 +90,4 @@ The root README now contains:
 - Limitations and cleanup guidance
 - Accurate CV wording
 
-Stage 8 repository work is complete. The overall project remains honestly marked in progress until the Stage 7 Power BI correction checklist is applied and the corrected report values are reconciled.
+Stage 8 and the overall portfolio project are complete. Stage 7 records the Power BI refinements that were explicitly accepted as non-blocking limitations; they would need to be resolved before any production-use claim.

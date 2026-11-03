@@ -1,6 +1,6 @@
 # Stage 7 — Power BI reporting
 
-**Status:** In progress — four report pages and safe previews built; final visual corrections and full reconciliation remain
+**Status:** Complete with documented limitations — current report accepted 3 November 2026
 
 ## Purpose
 
@@ -170,9 +170,9 @@ Carrier-level reference values are:
 | GLS | 3,330 | 80.48% | 88.64 |
 | Hermes | 3,456 | 80.06% | 89.11 |
 
-## Final report corrections
+## Deferred report refinements
 
-Apply these changes before marking Stage 7 complete:
+The following recommendations were reviewed and accepted as non-blocking portfolio refinements on 3 November 2026. The current report previews are retained. In particular, the Carrier Performance table is a known visual field-mapping limitation; use the independently reconciled carrier benchmark table above rather than the displayed carrier counts as validation evidence.
 
 1. Rename the navigation label `Executive order` to `Executive Overview` or `Overview` on every page.
 2. Restrict sales-page date slicers to the data period January 2024 through December 2025. Use the same order-date interpretation on all four pages unless an event-date visual is explicitly labelled.
@@ -197,11 +197,11 @@ After the corrections:
 4. Export one full-page PNG per report page into `docs/images/` using the filenames listed in [the image guide](../images/README.md).
 5. Add the Executive Overview image to the root README and link the remaining screenshots from this stage report.
 
-Stage 7 is complete only after all correction items are resolved, the benchmarks reconcile, and safe report images are versioned.
+Stage 7 is complete for the agreed portfolio scope because the report pages, documented DAX contract, headline reconciliation, independent carrier benchmarks, safe previews, and known limitations are all present. The deferred items above must be addressed before representing the report as production-ready.
 
 ## Current report preview
 
-The following credential-safe images document the current four-page report. They should be re-exported with the same filenames after the final corrections above.
+The following credential-safe images document the accepted four-page portfolio report.
 
 ### Executive Overview
 

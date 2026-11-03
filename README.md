@@ -1,6 +1,6 @@
 # Retail Sales & Operations Analytics Lakehouse
 
-> **Status:** Stages 1–6 and the final dbt/repository validation are complete. The four-page Power BI report is built; Stage 7 remains open only for the documented visual corrections and final report reconciliation.
+> **Status:** Complete — all eight portfolio stages are finished. The four-page Power BI report is accepted with the documented visual limitations; this remains a learning project rather than a production implementation.
 
 A small analytics-engineering portfolio project using synthetic retail order, product, customer, and fulfilment data. The project demonstrates dbt transformations on Databricks Delta tables, one verified incremental `MERGE` workflow, tested dimensional marts, generated documentation, and a four-page Power BI Desktop report over certified models.
 
@@ -107,7 +107,7 @@ Stage 5 adds the physical incremental Delta table `workspace.retail_marts.fact_o
 
 Stage 6 completes the certified star schema with four dimensions and `fact_order_fulfilment`. The end-to-end build passed all 310 tasks, including 290 data tests and 2 isolated unit tests. Generated dbt documentation exposes model descriptions, columns, tests, and lineage. See [the Stage 6 report](./docs/stages/06-dimensional-marts.md) for the final mart inventory and validation evidence.
 
-The repository and live raw layer contain the updated snapshot: 2,000 customers, 500 products, 20,800 orders, 60,929 order lines, and 17,446 fulfilments. On 3 November 2026, the complete reconstruction and incremental proof were repeated, all 310 dbt tasks passed, and the dbt catalog was regenerated. See [the Stage 8 report](./docs/stages/08-final-validation.md) for the final audit evidence. The four Power BI pages and safe previews are built; the documented field-mapping corrections and final report reconciliation remain before Stage 7 is complete.
+The repository and live raw layer contain the updated snapshot: 2,000 customers, 500 products, 20,800 orders, 60,929 order lines, and 17,446 fulfilments. On 3 November 2026, the complete reconstruction and incremental proof were repeated, all 310 dbt tasks passed, and the dbt catalog was regenerated. See [the Stage 8 report](./docs/stages/08-final-validation.md) for the final audit evidence. The four Power BI pages and safe previews are complete; deferred visual refinements and the known carrier-table field-mapping limitation are recorded in the Stage 7 report.
 
 ## Power BI report
 

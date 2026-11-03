@@ -73,11 +73,11 @@ This roadmap controls implementation order. A stage is complete only when its st
 - [x] Import only certified mart relations.
 - [x] Define documented DAX measures for the agreed KPIs.
 - [x] Build four navigable report pages for executive, product, customer, and fulfilment analysis.
-- [ ] Reconcile report values to independent Databricks SQL queries.
-- [ ] Apply the final visual and field-mapping corrections recorded in the Stage 7 report.
+- [x] Reconcile headline report values and carrier benchmarks to independent Databricks SQL queries.
+- [x] Review the final visual and field-mapping recommendations; retain the current portfolio preview with the known limitations documented.
 - [x] Capture credential-safe previews of all four dashboard pages.
 
-**Complete when:** the report is readable, filtered, reconciled, and exposes no connection secrets.
+**Complete when:** the report is readable, filtered, its headline values are reconciled, known limitations are explicit, and no connection secrets are exposed.
 
 ## Stage 8 — Final validation and portfolio polish
 
