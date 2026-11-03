@@ -24,7 +24,7 @@ models:
           - not_null
           - relationships:
               arguments:
-                to: ref('view_customers')
+                to: ref('dim_customer')
                 field: customer_id
       - name: product_id
         description: Product foreign key for the future product dimension.
@@ -32,14 +32,19 @@ models:
           - not_null
           - relationships:
               arguments:
-                to: ref('view_products')
+                to: ref('dim_product')
                 field: product_id
       - name: order_created_at
         description: Timestamp at which the parent order was created.
         data_tests: [not_null]
       - name: order_date
-        description: Calendar date derived from order_created_at.
-        data_tests: [not_null]
+        description: Calendar date derived from order_created_at and date-dimension foreign key.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
       - name: order_type
         description: Physical or digital order classification.
         data_tests:

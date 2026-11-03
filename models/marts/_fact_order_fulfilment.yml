@@ -1,0 +1,134 @@
+version: 2
+
+models:
+  - name: fact_order_fulfilment
+    description: Certified physical-operations fact at one row per fulfilment and therefore at most one row per physical order.
+    columns:
+      - name: fulfilment_id
+        description: Stable fulfilment grain key.
+        data_tests: [not_null, unique]
+      - name: order_id
+        description: Physical order represented by the fulfilment.
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('view_orders')
+                field: order_id
+      - name: customer_id
+        description: Customer foreign key.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_id
+      - name: fulfilment_centre_id
+        description: Fulfilment-centre foreign key.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_fulfilment_centre')
+                field: fulfilment_centre_id
+      - name: order_created_at
+        description: Timestamp at which the order was created.
+        data_tests: [not_null]
+      - name: order_date
+        description: Order calendar date and date-dimension foreign key.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
+      - name: order_status
+        description: Parent order lifecycle status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [placed, processing, shipped, delivered, cancelled]
+      - name: order_type
+        description: Physical order classification.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [physical]
+      - name: carrier_name
+        description: Synthetic delivery carrier.
+        data_tests: [not_null]
+      - name: fulfilment_status
+        description: Operational fulfilment lifecycle status.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [processing, picked, shipped, delivered, cancelled]
+      - name: picked_at
+        description: Pick event timestamp, where available.
+      - name: picked_date
+        description: Pick event date, where available.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
+      - name: packed_at
+        description: Pack event timestamp, where available.
+      - name: packed_date
+        description: Pack event date, where available.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
+      - name: shipped_at
+        description: Ship event timestamp, where available.
+      - name: shipped_date
+        description: Ship event date, where available.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
+      - name: promised_delivery_date
+        description: Customer-facing promise date and date-dimension foreign key.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
+      - name: delivered_at
+        description: Delivery timestamp, where available.
+      - name: delivered_date
+        description: Delivery event date, where available.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day
+      - name: fulfilment_hours
+        description: Decimal hours from order creation to shipment; null before shipment.
+      - name: delivery_hours
+        description: Decimal hours from shipment to delivery; null before delivery.
+      - name: is_on_time_delivery
+        description: Delivered by the promise date; null for non-delivered records.
+      - name: is_delivered
+        description: Delivered-status indicator.
+        data_tests: [not_null]
+      - name: is_cancelled
+        description: Cancelled-status indicator.
+        data_tests: [not_null]
+      - name: fulfilment_updated_at
+        description: Latest fulfilment source update timestamp.
+        data_tests: [not_null]
+      - name: order_updated_at
+        description: Latest parent-order source update timestamp.
+        data_tests: [not_null]
+      - name: record_updated_at
+        description: Greatest of order and fulfilment update timestamps.
+        data_tests: [not_null]

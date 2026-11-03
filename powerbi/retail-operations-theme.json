@@ -1,0 +1,44 @@
+{
+  "name": "Retail Sales and Operations Portfolio",
+  "dataColors": [
+    "#18A6A6",
+    "#4C8EDA",
+    "#F3A712",
+    "#7C8DA5",
+    "#4CAF83",
+    "#D85B5B",
+    "#8E6BBE",
+    "#35A7C8"
+  ],
+  "background": "#F4F6F8",
+  "foreground": "#132238",
+  "tableAccent": "#18A6A6",
+  "good": "#4CAF83",
+  "neutral": "#F3A712",
+  "bad": "#D85B5B",
+  "maximum": "#18A6A6",
+  "center": "#F3A712",
+  "minimum": "#D85B5B",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#132238"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#132238"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#132238"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#566575"
+    }
+  }
+}

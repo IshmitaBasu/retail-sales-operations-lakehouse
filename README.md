@@ -1,10 +1,28 @@
 # Retail Sales & Operations Analytics Lakehouse
 
-> **Status:** Stages 1–5 complete; the remaining dimensions and fulfilment fact are next.
+> **Status:** Stages 1–6 complete; the four-page Power BI report is built and Stage 7 is in final reconciliation and presentation review.
 
-A small analytics-engineering portfolio project using synthetic retail order, product, customer, and fulfilment data. The project will demonstrate dbt transformations on Databricks Delta tables, one verified incremental `MERGE` workflow, tested dimensional marts, generated documentation, and a Power BI Desktop report over certified models.
+A small analytics-engineering portfolio project using synthetic retail order, product, customer, and fulfilment data. The project demonstrates dbt transformations on Databricks Delta tables, one verified incremental `MERGE` workflow, tested dimensional marts, generated documentation, and a four-page Power BI Desktop report over certified models.
 
 This is a non-commercial learning project built on Databricks Free Edition. It is not a production retail, finance, inventory, or fulfilment system and contains no real customer data.
+
+## Dashboard preview
+
+### Executive Overview
+
+![Power BI Executive Overview dashboard](docs/images/powerbi-executive-overview.png)
+
+### Sales & Products
+
+![Power BI Sales and Products dashboard](docs/images/powerbi-sales-products.png)
+
+### Customer
+
+![Power BI Customer and Channel Analysis dashboard](docs/images/powerbi-customer.png)
+
+### Fulfilment
+
+![Power BI Fulfilment and Operations dashboard](docs/images/powerbi-fulfilment.png)
 
 ## Business questions
 
@@ -24,7 +42,7 @@ The first release will answer:
 - Four dimensions and two fact tables with explicit grains.
 - Schema, uniqueness, relationship, accepted-value, business-rule, and reconciliation tests.
 - Generated dbt documentation.
-- A one-page Power BI Desktop report using only certified marts.
+- A four-page interactive Power BI Desktop report using only certified marts.
 - Reproducible setup, validation, security, and limitation notes.
 
 ## Architecture
@@ -87,4 +105,39 @@ Stage 4 adds five source-aligned staging views and two reusable intermediate vie
 
 Stage 5 adds the physical incremental Delta table `workspace.retail_marts.fact_order_line`. The controlled second run inserted 2,364 new keys and updated 836 existing rows through `MERGE`; the final 60,929-row fact reconciles exactly to its source with no duplicate keys. All 210 project tests pass. See [the Stage 5 report](./docs/stages/05-incremental-fact.md) for the reproducible proof.
 
-The repository and live raw layer now contain the updated snapshot: 2,000 customers, 500 products, 20,800 orders, 60,929 order lines, and 17,446 fulfilments. The four dimensions, fulfilment fact, and dashboard are not claimed complete yet.
+Stage 6 completes the certified star schema with four dimensions and `fact_order_fulfilment`. The end-to-end build passed all 310 tasks, including 290 data tests and 2 isolated unit tests. Generated dbt documentation exposes model descriptions, columns, tests, and lineage. See [the Stage 6 report](./docs/stages/06-dimensional-marts.md) for the final mart inventory and validation evidence.
+
+The repository and live raw layer contain the updated snapshot: 2,000 customers, 500 products, 20,800 orders, 60,929 order lines, and 17,446 fulfilments. The four Power BI pages are built; final field-mapping corrections, reconciliation, and credential-safe screenshots remain before Stage 7 is complete.
+
+## Power BI report
+
+The report uses Import mode and consumes only the six certified tables in `workspace.retail_marts`. Its four navigable pages are:
+
+| Page | Purpose |
+|---|---|
+| Executive Overview | Headline sales, margin, cancellation, and delivery KPIs with monthly, category, and regional performance |
+| Sales & Products | Monthly metric switching, category comparison, product sales-versus-margin analysis, and top products |
+| Customer | Regional, channel, and customer-segment mix with monthly segment trends and top customers |
+| Fulfilment | Delivery KPIs, centre and carrier performance, fulfilment status, and duration comparison |
+
+The local working `.pbix` is deliberately ignored because it contains connection metadata. The documented measures, reconciliation values, report review checklist, and screenshot instructions are in [the Stage 7 report](./docs/stages/07-power-bi-reporting.md).
+
+## Certified marts
+
+Power BI must consume only these physical Delta tables from `workspace.retail_marts`:
+
+| Model | Grain | Rows |
+|---|---|---:|
+| `dim_customer` | One row per customer | 2,000 |
+| `dim_product` | One row per product | 500 |
+| `dim_date` | One row per calendar date | 1,096 |
+| `dim_fulfilment_centre` | One row per fulfilment centre | 4 |
+| `fact_order_line` | One row per order line | 60,929 |
+| `fact_order_fulfilment` | One row per physical-order fulfilment | 17,446 |
+
+Generate and open the dbt catalog locally with:
+
+```powershell
+dbt docs generate --profiles-dir .dbt
+dbt docs serve --profiles-dir .dbt
+```

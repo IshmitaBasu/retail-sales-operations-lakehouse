@@ -13,7 +13,7 @@ Fix a small, achievable project boundary before configuring Databricks or implem
 - Build five staging views, two intermediate views, four dimensions, and two facts.
 - Demonstrate one genuine incremental Delta `merge` in `fact_order_line`.
 - Simulate inserts and updates through deterministic initial and updated source snapshots.
-- Use a single Power BI Desktop report page over certified marts only.
+- Use Power BI Desktop over certified marts only. The initial single-page boundary was expanded during Stage 7 to four focused pages so the project can demonstrate report navigation and a broader set of Power BI skills without expanding the data-model scope.
 - Exclude production ingestion, orchestration, SCDs, streaming, forecasting, and Power BI Service publication.
 - Use Databricks Free Edition and the included Serverless Starter Warehouse.
 

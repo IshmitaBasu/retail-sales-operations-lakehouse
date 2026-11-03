@@ -59,21 +59,22 @@ This roadmap controls implementation order. A stage is complete only when its st
 
 ## Stage 6 — Dimensional marts and data quality
 
-- [ ] Build four dimensions and `fact_order_fulfilment`.
-- [ ] Add key, relationship, accepted-value, range, formula, timestamp, and reconciliation tests.
-- [ ] Add focused unit tests for sales and fulfilment edge cases where supported.
-- [ ] Run the complete `dbt build` successfully.
-- [ ] Generate and review dbt documentation.
+- [x] Build four dimensions and `fact_order_fulfilment`.
+- [x] Add key, relationship, accepted-value, range, formula, timestamp, and reconciliation tests.
+- [x] Add focused unit tests for sales and fulfilment edge cases where supported.
+- [x] Run the complete `dbt build` successfully.
+- [x] Generate and review dbt documentation.
 
 **Complete when:** all marts are documented, tested, and reconcile to staging.
 
 ## Stage 7 — Power BI reporting
 
-- [ ] Connect Power BI Desktop to the Databricks SQL warehouse.
-- [ ] Import only certified mart relations.
-- [ ] Define documented DAX measures for the agreed KPIs.
-- [ ] Build one report page with KPI, time-series, category, and fulfilment-centre views.
+- [x] Connect Power BI Desktop to the Databricks SQL warehouse.
+- [x] Import only certified mart relations.
+- [x] Define documented DAX measures for the agreed KPIs.
+- [x] Build four navigable report pages for executive, product, customer, and fulfilment analysis.
 - [ ] Reconcile report values to independent Databricks SQL queries.
+- [ ] Apply the final visual and field-mapping corrections recorded in the Stage 7 report.
 - [ ] Capture a credential-safe dashboard preview.
 
 **Complete when:** the report is readable, filtered, reconciled, and exposes no connection secrets.

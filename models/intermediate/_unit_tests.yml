@@ -1,0 +1,39 @@
+version: 2
+
+unit_tests:
+  - name: order_line_sales_and_cancellation_logic
+    description: Proves monetary formulas and zero recognized sales for cancelled orders with isolated fixtures.
+    model: view_order_line_enriched
+    given:
+      - input: ref('view_order_lines')
+        rows:
+          - {order_line_id: LIN-TEST-1, order_id: ORD-TEST-1, product_id: PRD-TEST-1, quantity: 2, unit_price_eur: 10.00, discount_amount_eur: 3.00, updated_at: '2025-01-02 10:00:00'}
+          - {order_line_id: LIN-TEST-2, order_id: ORD-TEST-2, product_id: PRD-TEST-1, quantity: 3, unit_price_eur: 10.00, discount_amount_eur: 5.00, updated_at: '2025-01-03 10:00:00'}
+      - input: ref('view_orders')
+        rows:
+          - {order_id: ORD-TEST-1, customer_id: CUS-TEST-1, order_created_at: '2025-01-02 08:00:00', order_type: physical, sales_channel: web, payment_status: refunded, order_status: cancelled, currency_code: EUR, updated_at: '2025-01-02 12:00:00'}
+          - {order_id: ORD-TEST-2, customer_id: CUS-TEST-2, order_created_at: '2025-01-03 08:00:00', order_type: physical, sales_channel: mobile, payment_status: paid, order_status: delivered, currency_code: EUR, updated_at: '2025-01-03 12:00:00'}
+      - input: ref('view_products')
+        rows:
+          - {product_id: PRD-TEST-1, product_name: Test Product, category: Test Category, product_type: physical, unit_cost_eur: 4.00}
+    expect:
+      rows:
+        - {order_line_id: LIN-TEST-1, gross_sales_amount_eur: 20.00, net_sales_amount_eur: 17.00, cost_amount_eur: 8.00, gross_margin_amount_eur: 9.00, recognized_net_sales_amount_eur: 0.00}
+        - {order_line_id: LIN-TEST-2, gross_sales_amount_eur: 30.00, net_sales_amount_eur: 25.00, cost_amount_eur: 12.00, gross_margin_amount_eur: 13.00, recognized_net_sales_amount_eur: 25.00}
+
+  - name: fulfilment_duration_and_delivery_flag_logic
+    description: Proves duration calculations, an on-time delivery, and null delivery metrics before delivery.
+    model: view_fulfilment_enriched
+    given:
+      - input: ref('view_fulfilments')
+        rows:
+          - {fulfilment_id: FUL-TEST-1, order_id: ORD-TEST-1, fulfilment_centre_id: FC-TEST, fulfilment_centre_name: Test Centre, fulfilment_centre_region: North, carrier_name: Test Carrier, fulfilment_status: delivered, picked_at: '2025-01-01 12:00:00', packed_at: '2025-01-01 16:00:00', shipped_at: '2025-01-02 08:00:00', promised_delivery_date: '2025-01-03', delivered_at: '2025-01-03 08:00:00', updated_at: '2025-01-03 08:00:00'}
+          - {fulfilment_id: FUL-TEST-2, order_id: ORD-TEST-2, fulfilment_centre_id: FC-TEST, fulfilment_centre_name: Test Centre, fulfilment_centre_region: North, carrier_name: Test Carrier, fulfilment_status: processing, picked_at: null, packed_at: null, shipped_at: null, promised_delivery_date: '2025-01-06', delivered_at: null, updated_at: '2025-01-02 08:00:00'}
+      - input: ref('view_orders')
+        rows:
+          - {order_id: ORD-TEST-1, customer_id: CUS-TEST-1, order_created_at: '2025-01-01 08:00:00', order_status: delivered, order_type: physical, updated_at: '2025-01-03 08:00:00'}
+          - {order_id: ORD-TEST-2, customer_id: CUS-TEST-2, order_created_at: '2025-01-02 08:00:00', order_status: processing, order_type: physical, updated_at: '2025-01-02 08:00:00'}
+    expect:
+      rows:
+        - {fulfilment_id: FUL-TEST-1, fulfilment_hours: 24.00, delivery_hours: 24.00, is_on_time_delivery: true, is_delivered: true, is_cancelled: false}
+        - {fulfilment_id: FUL-TEST-2, fulfilment_hours: null, delivery_hours: null, is_on_time_delivery: null, is_delivered: false, is_cancelled: false}

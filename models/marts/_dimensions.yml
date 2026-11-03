@@ -1,0 +1,142 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: Certified customer dimension at one row per customer.
+    columns:
+      - name: customer_id
+        description: Stable customer business key and dimension primary key.
+        data_tests: [not_null, unique]
+      - name: signup_date
+        description: Date on which the customer joined the retailer.
+        data_tests: [not_null]
+      - name: customer_segment
+        description: Consumer or small-business reporting segment.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [consumer, small_business]
+      - name: region
+        description: Simplified German customer region.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [North, South, East, West]
+      - name: country_code
+        description: ISO customer country code.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [DE]
+      - name: customer_updated_at
+        description: Latest source update timestamp for the customer.
+        data_tests: [not_null]
+
+  - name: dim_product
+    description: Certified product dimension at one row per product.
+    columns:
+      - name: product_id
+        description: Stable product business key and dimension primary key.
+        data_tests: [not_null, unique]
+      - name: product_name
+        description: Synthetic product display name.
+        data_tests: [not_null]
+      - name: category
+        description: Product reporting category.
+        data_tests: [not_null]
+      - name: product_type
+        description: Physical or digital product classification.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [physical, digital]
+      - name: unit_cost_eur
+        description: Synthetic unit cost in EUR.
+        data_tests: [not_null]
+      - name: list_price_eur
+        description: Synthetic list price in EUR.
+        data_tests: [not_null]
+      - name: is_active
+        description: Whether the product is currently active.
+        data_tests: [not_null]
+      - name: product_updated_at
+        description: Latest source update timestamp for the product.
+        data_tests: [not_null]
+
+  - name: dim_fulfilment_centre
+    description: Certified fulfilment-centre dimension at one row per centre.
+    columns:
+      - name: fulfilment_centre_id
+        description: Stable centre business key and dimension primary key.
+        data_tests: [not_null, unique]
+      - name: fulfilment_centre_name
+        description: Fulfilment-centre display name.
+        data_tests: [not_null]
+      - name: fulfilment_centre_region
+        description: Region in which the centre operates.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [North, South, East, West]
+
+  - name: dim_date
+    description: Certified contiguous calendar dimension covering complete years required by order and fulfilment event dates.
+    columns:
+      - name: date_day
+        description: Calendar date and dimension primary key.
+        data_tests: [not_null, unique]
+      - name: date_key
+        description: Integer date key in YYYYMMDD format.
+        data_tests: [not_null, unique]
+      - name: calendar_year
+        description: Four-digit calendar year.
+        data_tests: [not_null]
+      - name: calendar_quarter
+        description: Calendar quarter number from 1 to 4.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3, 4]
+      - name: month_number
+        description: Calendar month number from 1 to 12.
+        data_tests: [not_null]
+      - name: month_name
+        description: Full English calendar month name.
+        data_tests: [not_null]
+      - name: year_month
+        description: Sortable calendar label in YYYY-MM format.
+        data_tests: [not_null]
+      - name: week_of_year
+        description: Week number within the year.
+        data_tests: [not_null]
+      - name: day_of_month
+        description: Day number within the month.
+        data_tests: [not_null]
+      - name: iso_day_of_week
+        description: Monday-based day number from 1 to 7.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3, 4, 5, 6, 7]
+      - name: day_name
+        description: Full English weekday name.
+        data_tests: [not_null]
+      - name: month_start_date
+        description: First calendar date of the containing month.
+        data_tests: [not_null]
+      - name: quarter_start_date
+        description: First calendar date of the containing quarter.
+        data_tests: [not_null]
+      - name: year_start_date
+        description: First calendar date of the containing year.
+        data_tests: [not_null]
+      - name: is_weekend
+        description: True for Saturday and Sunday.
+        data_tests: [not_null]

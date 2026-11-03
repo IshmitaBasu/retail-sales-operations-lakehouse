@@ -176,9 +176,16 @@ on_time_delivery = delivered_date <= promised_delivery_date
 - Digital orders are excluded from physical fulfilment KPIs.
 - A delivered order must have a delivered timestamp.
 
-## Reporting KPIs
+## Reporting interface
 
-The Power BI page will contain:
+The Power BI report contains four navigable pages:
+
+1. Executive Overview
+2. Sales & Products
+3. Customer
+4. Fulfilment
+
+Across those pages, the report contains:
 
 - Recognized net sales
 - Order count
@@ -190,6 +197,7 @@ The Power BI page will contain:
 - Monthly sales trend
 - Sales by product category
 - Fulfilment performance by centre
+- Carrier performance and operational duration comparisons
 
 Every KPI must be traceable to a certified fact column or a documented DAX measure.
 
@@ -215,6 +223,7 @@ Tests must fail visibly; invalid data will not be made valid through undocumente
 - Connect through the Databricks SQL warehouse only after the marts pass dbt tests.
 - Import only `dim_*` and `fact_*` relations from `retail_marts`.
 - Keep report calculations small and document DAX measures.
+- Use a shared page header, navigation, filter rail, visual theme, and consistent measure formats across all four pages.
 - Store a credential-safe screenshot in Git.
 - Keep local `.pbix` and connection artifacts ignored until reviewed; prefer a sanitized `.pbit` template for distribution.
 
