@@ -75,17 +75,17 @@ This roadmap controls implementation order. A stage is complete only when its st
 - [x] Build four navigable report pages for executive, product, customer, and fulfilment analysis.
 - [ ] Reconcile report values to independent Databricks SQL queries.
 - [ ] Apply the final visual and field-mapping corrections recorded in the Stage 7 report.
-- [ ] Capture a credential-safe dashboard preview.
+- [x] Capture credential-safe previews of all four dashboard pages.
 
 **Complete when:** the report is readable, filtered, reconciled, and exposes no connection secrets.
 
 ## Stage 8 — Final validation and portfolio polish
 
-- [ ] Regenerate the project from documented inputs and commands.
-- [ ] Run the full dbt build, documentation generation, and incremental proof.
-- [ ] Scan the repository for credentials, personal details, generated artifacts, and broken links.
-- [ ] Complete the README with architecture, setup, validation results, dashboard preview, limitations, and cleanup guidance.
-- [ ] Add accurate completed-project CV wording.
-- [ ] Review the complete Git diff and prepare the final commit.
+- [x] Regenerate the project from documented inputs and commands.
+- [x] Run the full dbt build, documentation generation, and incremental proof.
+- [x] Scan the repository for credentials, personal details, generated artifacts, and broken links.
+- [x] Complete the README with architecture, setup, validation results, dashboard preview, limitations, and cleanup guidance.
+- [x] Add accurate completed-project CV wording.
+- [x] Review the complete Git diff and prepare the final repository-validation commit.
 
 **Complete when:** another person can understand the project, reproduce the transformation workflow, and see an honest portfolio demonstration.

@@ -1,6 +1,6 @@
 # Stage 7 — Power BI reporting
 
-**Status:** In progress — four report pages built; final corrections, full reconciliation, and safe screenshots remain
+**Status:** In progress — four report pages and safe previews built; final visual corrections and full reconciliation remain
 
 ## Purpose
 

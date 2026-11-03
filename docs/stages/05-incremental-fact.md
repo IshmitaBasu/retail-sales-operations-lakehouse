@@ -31,7 +31,7 @@ Run these commands from the repository root after completing Stage 4:
 # Establish the initial source state and baseline fact.
 python scripts\generate_synthetic_data.py --snapshot initial
 dbt seed --profiles-dir .dbt --full-refresh
-dbt build --profiles-dir .dbt --select fact_order_line --full-refresh
+dbt run --profiles-dir .dbt --select +fact_order_line --full-refresh
 
 # Replace only the raw source state; do not rebuild the fact yet.
 python scripts\generate_synthetic_data.py --snapshot updated
@@ -45,8 +45,10 @@ dbt run --profiles-dir .dbt --select fact_order_line
 
 # Prove that the source and fact now reconcile.
 dbt show --profiles-dir .dbt --select stage5_incremental_audit
-dbt test --profiles-dir .dbt
+dbt build --profiles-dir .dbt
 ```
+
+The baseline uses `dbt run`, rather than a fact-only `dbt build`, because the current project also contains a Stage 6 cross-mart reconciliation test. During the intentional initial-versus-updated transition, the other fact may temporarily represent a different snapshot. The final complete `dbt build` recreates all marts on the updated state and runs every test together.
 
 The final repository state intentionally retains the updated snapshot so later marts and reporting include December 2025.
 
